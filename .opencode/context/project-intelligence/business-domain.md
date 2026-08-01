@@ -46,7 +46,7 @@ Solution: Structured, grounded study notes + hands-on module practice in this re
 | Metric | Definition | Target | Current |
 |--------|------------|--------|---------|
 | Exam pass | AI-103 score | ≥700 | Not taken |
-| Modules completed | Course modules with checked-off units | 12/12 | 0/12 |
+| Modules completed | Course modules with checked-off units | 34/34 | 0/34 |
 | Hands-on projects | Roadmap levels built (Agents.md §18) | 8 levels | 0/8 |
 | Note coverage | Unit-by-unit notes in module folders | All units | M1 in progress |
 
@@ -67,8 +67,8 @@ Market Position: Solo study track toward AI-103 certification
 
 ## Roadmap Context
 
-**Current Focus**: Module 01 — Plan and prepare to develop AI solutions on Azure (`modules/01-plan-and-prepare/`)
-**Next Milestone**: Complete M1 units + notes, then M2 (create and consume Azure AI services)
+**Current Focus**: LP1 Module 1.1 — Plan and prepare to develop AI solutions on Azure (`modules/01-genai/01-plan-and-prepare/`)
+**Next Milestone**: Complete LP1 modules (generative AI), then LP2 (agents)
 **Long-term Vision**: Pass AI-103 and ship production-grade agents (containerized hosted agents, multi-agent orchestration, MCP tools)
 
 ## Business Constraints
@@ -90,7 +90,7 @@ Market Position: Solo study track toward AI-103 certification
 
 - `AI-103-Study-Guide.md` — exam skills this study goal targets
 - `Agents.md` — §17 skills map + §18 hands-on roadmap (the "how" behind this goal)
-- `modules/01-plan-and-prepare/README.md` — current module being studied
+- `modules/01-genai/01-plan-and-prepare/README.md` — current module being studied
 
 ## Related Files
 

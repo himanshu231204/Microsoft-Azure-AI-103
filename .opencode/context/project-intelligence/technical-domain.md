@@ -24,25 +24,29 @@
 ## Repo Structure
 
 ```
-modules/NN-<slug>/       # Per-module folders (01-plan-and-prepare, 02-create-consume-ai-services, ...)
-README.md                # Course overview with module list and progress tracker
-AI-103-Study-Guide.md    # Full exam skills (from Microsoft Learn)
-Agents.md                # Agentic deep-dive notes
-.opencode/context/       # Agent knowledge base
+modules/
+├── 01-genai/          # LP1: Develop generative AI apps (8 modules)
+├── 02-agents/         # LP2: Develop AI agents (9 modules)
+├── 03-language/       # LP3: Develop natural language solutions (9 modules)
+└── 04-vision/         # LP4: Extract insights from visual data (8 modules)
+README.md              # Course overview with module list and progress tracker
+AI-103-Study-Guide.md  # Full exam skills (from Microsoft Learn)
+Agents.md              # Agentic deep-dive notes
+.opencode/context/     # Agent knowledge base
 ```
 
 ## Course Structure (AI-103T00-A)
 
-| Day | Modules | Exam Section | Weight |
-|-----|---------|-------------|--------|
-| 1 | 01–03: Plan & Manage Azure AI Solutions | §1 | 25–30% |
-| 2 | 04–06: Generative AI Apps | §2 | 30–35% |
-| 3 | 07–09: AI Agents | §2 (continued) | 30–35% |
-| 4 | 10–12: Vision, Text & Information Extraction | §3–5 | 35% total |
+| Learning Path | Modules | Focus |
+|---------------|---------|-------|
+| 01-genai | 8 modules | Generative AI apps (Foundry SDK, RAG, fine-tuning, prompt flow) |
+| 02-agents | 9 modules | AI agents (Foundry Agent Service, custom tools, MCP, multi-agent, A2A) |
+| 03-language | 9 modules | Natural language (text analysis, speech, translation, CLU) |
+| 04-vision | 8 modules | Computer vision (image analysis, OCR, faces, video, image generation) |
 
 ## Study Notes Patterns
 
-- **Module folders**: `modules/NN-<module-slug>/` — numbered + official Microsoft Learn slug (e.g., `01-plan-and-prepare`)
+- **Module folders**: `modules/NN-<learning-path-slug>/` — numbered learning path with sub-modules (e.g., `modules/01-genai/01-plan-and-prepare/`)
 - **Each module**: `README.md` (learning objectives, prerequisites, unit checklist, key takeaways) + `notes/` for unit-by-unit notes
 - **README format**: learning objectives → prerequisites → unit checklist table → key takeaways → notes → related resources
 - **Tracking**: checkbox lists (☐) for objectives and units, updated as modules are completed
@@ -71,7 +75,8 @@ project = AIProjectClient.from_connection_string(conn_str, credential=credential
 
 | Type | Convention | Example |
 |------|-----------|---------|
-| Module dirs | `NN-<slug>` | `01-ai-agent-fundamentals` |
+| Learning path dirs | `NN-<slug>` | `01-genai`, `02-agents` |
+| Module dirs | `NN-<slug>` | `01-plan-and-prepare` |
 | Notes files | kebab-case | `unit-2-notes.md` |
 | Markdown docs | PascalCase/Caps | `AI-103-Study-Guide.md` |
 | Code files | snake_case (Python) | `agent_client.py` |
@@ -94,7 +99,7 @@ project = AIProjectClient.from_connection_string(conn_str, credential=credential
 
 - `Agents.md` — §9 Python SDK essentials, §14 production security & deployment
 - `AI-103-Study-Guide.md` — full exam skills measured
-- `modules/01-plan-and-prepare/README.md` — module template example
+- `modules/01-genai/01-plan-and-prepare/README.md` — module template example
 - `.opencode/env.example` — environment variable pattern
 
 ## Related Files

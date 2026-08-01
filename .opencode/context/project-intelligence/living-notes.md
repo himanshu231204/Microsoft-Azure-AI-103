@@ -32,17 +32,16 @@
 | Question | Stakeholders | Status | Next Action |
 |----------|--------------|--------|-------------|
 | Fill `business-tech-bridge.md` template? | himan | Open | Map exam skills → technical topics |
-| Which Azure services to spin up for M1 exercise? | himan | Open | Check free-tier / Foundry portal |
-| Confirm course module list with actual AI-103T00-A outline? | himan | Open | Paste real module list from training portal |
+| Which Azure services to spin up for LP1 exercises? | himan | Open | Check free-tier / Foundry portal |
 
 ### Open Question Details
 
-**Course module list confirmation**  
-*Context*: Proposed 12-module structure based on exam sections + learning paths; actual AI-103T00-A module list not publicly available  
+**Azure services for LP1 exercises**  
+*Context*: LP1 modules include Foundry SDK, prompt flow, RAG, fine-tuning — need Azure resources  
 *Stakeholders*: himan  
-*Options*: Use proposed structure (valid for exam prep) vs wait for exact course outline  
-*Timeline*: Before M1 start  
-*Status*: Open — proceed with proposed structure unless contradicted by actual course
+*Options*: Use free tier / small models where possible (per `Agents.md` §16: cost-aware)  
+*Timeline*: Before LP1 exercises  
+*Status*: Open
 
 ## Known Issues
 
@@ -81,7 +80,7 @@
 
 ### Code Patterns Worth Preserving
 - `DefaultAzureCredential` keyless auth in all Azure code — lives in `technical-domain.md` §Code Patterns
-- Module README checklist format (objectives/units/key takeaways) — see `modules/01-plan-and-prepare/README.md`
+- Module README checklist format (objectives/units/key takeaways) — see `modules/01-genai/01-plan-and-prepare/README.md`
 
 ### Gotchas for Maintainers
 - Don't rename module folders without updating links in `Agents.md` §17–18 and `navigation.md`
@@ -91,8 +90,8 @@
 
 | Project | Goal | Owner | Timeline | Status |
 |---------|------|-------|----------|--------|
-| Module 01 study | Complete `plan-and-prepare` (9 units) | himan | 2026-08-01 | In Progress |
-| Module 02 prep | `create-consume-ai-services` — create and use Azure AI services | himan | Next | Pending |
+| LP1 Module 1.1 study | Complete `plan-and-prepare` (9 units) | himan | 2026-08-01 | In Progress |
+| LP1 Module 1.2 prep | `choose-deploy-models` — deploy models from catalog | himan | Next | Pending |
 
 ## Archive (Resolved Items)
 
@@ -103,14 +102,14 @@
 
 ## Onboarding Checklist
 
-- [ ] Review open questions and decide on course module list confirmation
-- [ ] Convert M1 units to `notes/` as completed
-- [ ] Know current active project (Module 01)
+- [ ] Review open questions and decide on Azure services for LP1
+- [ ] Convert LP1 units to `notes/` as completed
+- [ ] Know current active project (LP1 Module 1.1)
 - [ ] Keep decisions-log and living-notes current
 
 ## 📂 Codebase References
 
-- `modules/01-plan-and-prepare/README.md` — active study project referenced in Active Projects
+- `modules/01-genai/01-plan-and-prepare/README.md` — active study project referenced in Active Projects
 - `Agents.md` — §17 study path, §18 project roadmap (drives "Next Action" items)
 - `.opencode/context/project-intelligence/technical-domain.md` — patterns referenced in Insights
 

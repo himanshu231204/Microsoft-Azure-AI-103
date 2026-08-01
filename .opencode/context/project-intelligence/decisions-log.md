@@ -19,28 +19,28 @@
 **Owner**: himan
 
 ### Context
-Starting Course AI-103T00-A (4-day instructor-led). Needed a consistent place for per-module study notes, with room for all 12 course modules.
+Starting Course AI-103T00-A (4-day instructor-led). Needed a consistent place for per-module study notes, organized by the 4 learning paths.
 
 ### Decision
-Use `modules/NN-<module-slug>/` folders: a two-digit number matching the course day/module order, plus a descriptive slug (e.g., `modules/01-plan-and-prepare/`). Each module has a `README.md` (objectives, unit checklist, key takeaways) and a `notes/` directory.
+Use `modules/NN-<learning-path-slug>/NN-<module-slug>/` folders: learning path directory + numbered module subdirectory (e.g., `modules/01-genai/01-plan-and-prepare/`). Each module has a `README.md` (objectives, unit checklist, key takeaways) and a `notes/` directory.
 
 ### Rationale
-Numbered prefixes keep modules ordered naturally; using descriptive slugs keeps a stable link to the official course module and avoids renaming if titles change.
+Organizes 34 modules into 4 logical learning paths. Two-level hierarchy keeps folders manageable and visually scannable.
 
 ### Alternatives Considered
 | Alternative | Pros | Cons | Why Rejected? |
 |-------------|------|------|---------------|
-| Top-level folders per module | Simple | No ordering, no namespace | Numbered `modules/` keeps things tidy |
-| Title-based names (e.g., `module-1-agents/`) | Human-readable | Breaks link to official slug, renaming risk | Official slug is stable & linkable |
+| Flat `modules/NN-<slug>/` | Simple | No learning path grouping, 34 folders flat | Too many flat folders |
+| Day-based `day-1/`, `day-2/` | Matches course schedule | Learning paths ≠ days; content evolves | Learning paths are stable |
 
 ### Impact
-- **Positive**: Consistent, ordered, extensible structure for 12 modules
-- **Negative**: Folder names are technical (slugs), not friendly titles
+- **Positive**: Organized by learning path, scalable for 34 modules
+- **Negative**: Two-level nesting adds one extra click
 - **Risk**: Low
 
 ### Related
 - `technical-domain.md` — "Study Notes Patterns"
-- `modules/01-plan-and-prepare/README.md` — first example
+- `modules/01-genai/01-plan-and-prepare/README.md` — first example
 
 ---
 
@@ -149,7 +149,8 @@ Aligns repo with the actual course the user is attending. The 12-module structur
 
 | Decision | Date | Replaced By | Why |
 |----------|------|-------------|-----|
-| Module structure based on self-paced learning path (7 modules) | 2026-08-01 | Course-based structure (12 modules) | User is taking AI-103T00-A (4-day instructor-led), not self-paced learning path |
+| Module structure based on self-paced learning path (7 modules) | 2026-08-01 | Course-based structure (4 learning paths, 34 modules) | User is taking AI-103T00-A (4-day instructor-led), not self-paced learning path |
+| Flat module structure (12 modules) | 2026-08-01 | Nested learning path structure (4 LPs × 8-9 modules) | Actual course has 4 learning paths with 34 total modules, not 12 |
 
 ## Onboarding Checklist
 
@@ -161,7 +162,7 @@ Aligns repo with the actual course the user is attending. The 12-module structur
 
 ## 📂 Codebase References
 
-- `modules/01-plan-and-prepare/` — created per "module folder structure" decision
+- `modules/01-genai/01-plan-and-prepare/` — created per "module folder structure" decision
 - `Agents.md` — §14 security/deploy patterns behind the keyless-auth decision
 - `.opencode/env.example` — env var pattern behind keyless config decision
 
