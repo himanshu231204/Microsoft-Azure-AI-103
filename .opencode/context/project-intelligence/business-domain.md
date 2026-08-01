@@ -1,88 +1,97 @@
-<!-- Context: project-intelligence/business | Priority: high | Version: 1.0 | Updated: 2025-01-12 -->
+<!-- Context: project-intelligence/business | Priority: high | Version: 1.0 | Updated: 2026-08-01 -->
 
 # Business Domain
 
-> Document the business context, problems solved, and value created.
+> Why this repo exists: pass the AI-103 exam and build real, production-grade AI agent skills on Azure.
 
 ## Quick Reference
 
-- **Purpose**: Understand why this project exists
-- **Update When**: Business direction changes, new features shipped, pivot
-- **Audience**: Developers needing context, stakeholders, product team
+- **Purpose**: Understand the study goal and what "success" means here
+- **Update When**: Study focus shifts, exam date changes, goals evolve
+- **Audience**: Developers, AI agents, the owner (self-study)
 
 ## Project Identity
 
 ```
-Project Name: [Name]
-Tagline: [One-line description]
-Problem Statement: [What problem are we solving?]
-Solution: [How we're solving it]
+Project Name: Microsoft-Azure-AI-103 study workspace
+Tagline: Exam prep + hands-on Azure AI agent development
+Problem Statement: Need to pass AI-103 (Developing AI Apps and Agents on Azure)
+                    while building skills that translate to real AI engineering work.
+Solution: Structured, grounded study notes + hands-on module practice in this repo,
+          sourced from official Microsoft Learn documentation.
 ```
 
 ## Target Users
 
 | User Segment | Who They Are | What They Need | Pain Points |
 |--------------|--------------|----------------|-------------|
-| [Primary] | [Description] | [Their needs] | [Their frustrations] |
-| [Secondary] | [Description] | [Their needs] | [Their frustrations] |
+| Owner (primary) | Solo learner, aspiring AI engineer | Pass exam (score ≥700), retain skills | Info overload, outdated docs, no practice |
+| AI agents (secondary) | Assistants working in this repo | Clear patterns & structure to help effectively | Ambiguous conventions, template placeholders |
 
 ## Value Proposition
 
-**For Users**:
-- [Key benefit 1]
-- [Key benefit 2]
-- [Key benefit 3]
+**For the owner**:
+- Official, up-to-date study material (Microsoft Learn MCP) instead of stale training data
+- One place for notes: exam guide + agent deep-dive + per-module folders
+- Hands-on roadmap (Levels 1–8 in `Agents.md`) that builds exam skills AND production skills
 
-**For Business**:
-- [Key value 1]
-- [Key value 2]
+**For agents**:
+- Clear module structure (`modules/NN-<slug>`) to file work correctly
+- Documented patterns (SDK usage, keyless auth, doc sourcing) to match conventions
 
 ## Success Metrics
 
 | Metric | Definition | Target | Current |
 |--------|------------|--------|---------|
-| [Metric 1] | [What it measures] | [Goal] | [Actual] |
-| [Metric 2] | [What it measures] | [Goal] | [Actual] |
+| Exam pass | AI-103 score | ≥700 | Not taken |
+| Modules completed | Learning-path modules with checked-off units | 7/7 | 1/7 ✅ |
+| Hands-on projects | Roadmap levels built (Agents.md §18) | 8 levels | 0/8 |
+| Note coverage | Unit-by-unit notes in module folders | All units | M1 in progress |
 
 ## Business Model (if applicable)
 
 ```
-Revenue Model: [How the business makes money]
-Pricing Strategy: [If applicable]
-Unit Economics: [CAC, LTV, etc.]
-Market Position: [Where we fit in the market]
+Revenue Model: N/A (self-study investment)
+Pricing Strategy: Azure pay-as-you-go / free credits for practice
+Unit Economics: Time + Azure usage cost
+Market Position: Solo study track toward AI-103 certification
 ```
 
 ## Key Stakeholders
 
 | Role | Name | Responsibility | Contact |
 |------|------|----------------|---------|
-| [Product Owner] | [Name] | [What they own] | [Contact] |
-| [Tech Lead] | [Name] | [What they own] | [Contact] |
-| [Business Lead] | [Name] | [What they own] | [Contact] |
+| Owner | himan | Study, practice, take exam | — |
 
 ## Roadmap Context
 
-**Current Focus**: [What we're working on now]
-**Next Milestone**: [Upcoming goal]
-**Long-term Vision**: [Where this is heading]
+**Current Focus**: Module 1 — Get started with AI agent development (`modules/01-ai-agent-fundamentals/`)
+**Next Milestone**: Complete M1 units + notes, then M2 (develop an AI agent with Foundry Agent Service)
+**Long-term Vision**: Pass AI-103 and ship production-grade agents (containerized hosted agents, multi-agent orchestration, MCP tools)
 
 ## Business Constraints
 
-- [Constraint 1] - [Why it exists]
-- [Constraint 2] - [Why it exists]
+- Time — study must fit around other commitments; notes should be efficient to review
+- Azure cost — practice should use free tier / small models where possible (per `Agents.md` §16: cost-aware)
+- Docs change — must ground notes in current Microsoft Learn content, not stale info
 
 ## Onboarding Checklist
 
-- [ ] Understand the problem statement
-- [ ] Identify target users and their needs
+- [x] Understand the problem statement (pass AI-103 + build real skills)
+- [x] Identify target user (self) and needs
 - [ ] Know the key value proposition
-- [ ] Understand success metrics
-- [ ] Know who the stakeholders are
-- [ ] Understand current business constraints
+- [ ] Track success metrics as study progresses
+- [ ] Know who the stakeholders are (self)
+- [ ] Understand current constraints (time, cost, docs currency)
+
+## 📂 Codebase References
+
+- `AI-103-Study-Guide.md` — exam skills this study goal targets
+- `Agents.md` — §17 skills map + §18 hands-on roadmap (the "how" behind this goal)
+- `modules/01-ai-agent-fundamentals/README.md` — current module being studied
 
 ## Related Files
 
-- `technical-domain.md` - How this business need is solved technically
-- `business-tech-bridge.md` - Mapping between business and technical
-- `decisions-log.md` - Business decisions with context
+- `technical-domain.md` - How this study goal is organized technically
+- `business-tech-bridge.md` - Mapping between exam goals and technical topics
+- `decisions-log.md` - Study decisions with context

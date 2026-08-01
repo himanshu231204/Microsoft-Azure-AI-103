@@ -1,127 +1,132 @@
-<!-- Context: project-intelligence/decisions | Priority: high | Version: 1.0 | Updated: 2025-01-12 -->
+<!-- Context: project-intelligence/decisions | Priority: high | Version: 1.0 | Updated: 2026-08-01 -->
 
 # Decisions Log
 
-> Record major architectural and business decisions with full context. This prevents "why was this done?" debates.
+> Record major decisions with full context so future work stays consistent.
 
 ## Quick Reference
 
-- **Purpose**: Document decisions so future team members understand context
+- **Purpose**: Document decisions so the owner and agents understand why things are structured this way
 - **Format**: Each decision as a separate entry
 - **Status**: Decided | Pending | Under Review | Deprecated
 
-## Decision Template
+---
 
-```markdown
-## [Decision Title]
+## Decision: Module folder structure `modules/NN-<slug>/`
 
-**Date**: YYYY-MM-DD
-**Status**: [Decided/Pending/Under Review/Deprecated]
-**Owner**: [Who owns this decision]
+**Date**: 2026-08-01
+**Status**: Decided
+**Owner**: himan
 
 ### Context
-[What situation prompted this decision? What was the problem or opportunity?]
+Starting the "Develop AI agents on Azure" learning path. Needed a consistent place for per-module study notes, with room for modules 2–7.
 
 ### Decision
-[What was decided? Be specific about the choice made.]
+Use `modules/NN-<module-slug>/` folders: a two-digit number matching the learning-path order, plus the official Microsoft Learn module slug (e.g., `modules/01-ai-agent-fundamentals/`). Each module has a `README.md` (objectives, unit checklist, key takeaways) and a `notes/` directory.
 
 ### Rationale
-[Why this decision? What were the alternatives and why were they rejected?]
+Numbered prefixes keep modules ordered naturally; using the official slug keeps a stable 1:1 link to the Microsoft Learn module and avoids renaming if titles change.
 
 ### Alternatives Considered
 | Alternative | Pros | Cons | Why Rejected? |
 |-------------|------|------|---------------|
-| [Alt 1] | [Pros] | [Cons] | [Why not chosen] |
-| [Alt 2] | [Pros] | [Cons] | [Why not chosen] |
+| Top-level folders per module | Simple | No ordering, no namespace | Numbered `modules/` keeps things tidy |
+| Title-based names (e.g., `module-1-agents/`) | Human-readable | Breaks link to official slug, renaming risk | Official slug is stable & linkable |
 
 ### Impact
-**Positive**: [What this enables or improves]
-**Negative**: [What trade-offs or limitations this creates]
-**Risk**: [What could go wrong]
+- **Positive**: Consistent, ordered, extensible structure for 7 modules
+- **Negative**: Folder names are technical (slugs), not friendly titles
+- **Risk**: Low
 
 ### Related
-- [Links to related decisions, PRs, issues, or documentation]
-```
+- `technical-domain.md` — "Study Notes Patterns"
+- `modules/01-ai-agent-fundamentals/README.md` — first example
 
 ---
 
-## Decision: [Title]
+## Decision: Use official Microsoft Learn as the primary study source
 
-**Date**: YYYY-MM-DD
-**Status**: [Status]
-**Owner**: [Owner]
+**Date**: 2026-08-01
+**Status**: Decided
+**Owner**: himan
 
 ### Context
-[What was happening? Why did we need to decide?]
+Study notes need to be accurate and current. AI docs change fast; general knowledge can be stale.
 
 ### Decision
-[What we decided]
+Ground all study content in official Microsoft Learn via the Microsoft Learn MCP server (search → code sample search → fetch). Use Context7/ExternalScout for external library docs (e.g., SDKs). Cite source URLs in notes.
 
 ### Rationale
-[Why this was the right choice]
+First-party, current, and exam-aligned. The AI-103 study guide and learning path are official Microsoft resources, matching what's on the exam.
 
 ### Alternatives Considered
 | Alternative | Pros | Cons | Why Rejected? |
 |-------------|------|------|---------------|
-| [Option A] | [Good things] | [Bad things] | [Reason] |
-| [Option B] | [Good things] | [Bad things] | [Reason] |
+| General web search | Broad coverage | Stale/unofficial info | Official docs are authoritative |
+| Training data only | Fast | Outdated (e.g., Next.js-style API drift) | Docs change frequently |
 
 ### Impact
-- **Positive**: [What we gain]
-- **Negative**: [What we trade off]
-- **Risk**: [What to watch for]
+- **Positive**: Accurate, citable, current notes
+- **Negative**: Requires MCP tool access to fetch
+- **Risk**: Low
 
 ### Related
-- [Link to PR #000]
-- [Link to issue #000]
-- [Link to documentation]
+- `technical-domain.md` — "Doc-Fetching Workflow"
+- `AI-103-Study-Guide.md` — source document
 
 ---
 
-## Decision: [Title]
+## Decision: Keyless authentication as the only Azure auth pattern
 
-**Date**: YYYY-MM-DD
-**Status**: [Status]
-**Owner**: [Owner]
+**Date**: 2026-08-01
+**Status**: Decided
+**Owner**: himan
 
 ### Context
-[What was happening?]
+Azure SDK code samples in this repo should model production best practices, not quick hacks.
 
 ### Decision
-[What we decided]
+Use `DefaultAzureCredential` (CLI → managed identity → env) and managed identity for all Azure authentication. Never commit API keys. Config via `.env` + `python-dotenv`.
 
 ### Rationale
-[Why this was right]
+Matches Microsoft production guidance (`Agents.md` §14: keyless & least privilege) and is exam-relevant (managed identity, keyless credentials are tested skills).
 
 ### Alternatives Considered
 | Alternative | Pros | Cons | Why Rejected? |
 |-------------|------|------|---------------|
-| [Option A] | [Good things] | [Bad things] | [Reason] |
+| API keys in code | Fast to write | Insecure, anti-pattern, exam-wrong | Never acceptable |
+| Hardcoded connection strings | Simple | Secrets leak risk | Use `.env` instead |
 
 ### Impact
-- **Positive**: [What we gain]
-- **Negative**: [What we trade off]
+- **Positive**: Secure, production-ready, exam-aligned
+- **Negative**: Slightly more setup for local dev
+- **Risk**: Low
 
 ### Related
-- [Link]
+- `technical-domain.md` — "Security Requirements"
+- `Agents.md` — §9 Python SDK essentials, §14 security
 
 ---
 
 ## Deprecated Decisions
 
-Decisions that were later overturned (for historical context):
-
 | Decision | Date | Replaced By | Why |
 |----------|------|-------------|-----|
-| [Old decision] | [Date] | [New decision] | [Reason] |
+| — | — | — | None yet |
 
 ## Onboarding Checklist
 
-- [ ] Understand the philosophy behind major architectural choices
-- [ ] Know why certain technologies were chosen over alternatives
-- [ ] Understand trade-offs that were made
-- [ ] Know where to find decision context when questions arise
-- [ ] Understand what decisions are pending and why
+- [x] Understand philosophy behind major choices
+- [x] Know why technologies/conventions were chosen
+- [x] Understand trade-offs made
+- [x] Know where to find decision context
+- [ ] Review pending decisions as study progresses
+
+## 📂 Codebase References
+
+- `modules/01-ai-agent-fundamentals/` — created per "module folder structure" decision
+- `Agents.md` — §14 security/deploy patterns behind the keyless-auth decision
+- `.opencode/env.example` — env var pattern behind keyless config decision
 
 ## Related Files
 

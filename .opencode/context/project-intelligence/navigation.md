@@ -1,4 +1,4 @@
-<!-- Context: project-intelligence/nav | Priority: high | Version: 1.0 | Updated: 2025-01-12 -->
+<!-- Context: project-intelligence/nav | Priority: high | Version: 1.2 | Updated: 2026-08-01 -->
 
 # Project Intelligence
 
@@ -9,23 +9,30 @@
 ```
 .opencode/context/project-intelligence/
 ├── navigation.md              # This file - quick overview
-├── business-domain.md         # Business context and problem statement
-├── technical-domain.md        # Stack, architecture, technical decisions
-├── business-tech-bridge.md    # How business needs map to solutions
-├── decisions-log.md           # Major decisions with rationale
-└── living-notes.md            # Active issues, debt, open questions
+├── business-domain.md         # Business context and study goal (filled 2026-08-01)
+├── technical-domain.md        # Stack, architecture, study patterns (filled, critical)
+├── business-tech-bridge.md    # How business needs map to solutions (template - unfilled)
+├── decisions-log.md           # Major decisions with rationale (filled 2026-08-01)
+└── living-notes.md            # Active study items, open questions (filled 2026-08-01)
 ```
 
 ## Quick Routes
 
+| What You Need | File | Description | Priority |
+|---------------|------|-------------|----------|
+| Understand the "why" | `business-domain.md` | Problem, users, value proposition | high |
+| Understand the "how" | `technical-domain.md` | Stack, architecture, study patterns (AI-103) | critical |
+| See the connection | `business-tech-bridge.md` | Business → technical mapping | high |
+| Know the context | `decisions-log.md` | Why decisions were made | high |
+| Current state | `living-notes.md` | Active issues and open questions | high |
+| All of the above | Read all files in order | Full project intelligence | — |
+
+**Repo quick routes**:
 | What You Need | File | Description |
 |---------------|------|-------------|
-| Understand the "why" | `business-domain.md` | Problem, users, value proposition |
-| Understand the "how" | `technical-domain.md` | Stack, architecture, integrations |
-| See the connection | `business-tech-bridge.md` | Business → technical mapping |
-| Know the context | `decisions-log.md` | Why decisions were made |
-| Current state | `living-notes.md` | Active issues and open questions |
-| All of the above | Read all files in order | Full project intelligence |
+| Exam skills measured | `AI-103-Study-Guide.md` (repo root) | Official skills + study resources |
+| Agent deep-dive | `Agents.md` (repo root) | Agentic AI concepts, SDKs, production |
+| Current module | `modules/01-ai-agent-fundamentals/` | Module 1 study notes (in progress) |
 
 ## Usage
 

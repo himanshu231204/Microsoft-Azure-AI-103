@@ -1,108 +1,93 @@
-<!-- Context: project-intelligence/technical | Priority: high | Version: 1.0 | Updated: 2025-01-12 -->
+<!-- Context: project-intelligence/technical | Priority: critical | Version: 1.0 | Updated: 2026-08-01 -->
 
 # Technical Domain
 
-> Document the technical foundation, architecture, and key decisions.
+> Tech stack, structure, and patterns for this AI-103 study workspace (exam prep + hands-on Azure practice).
 
 ## Quick Reference
 
-- **Purpose**: Understand how the project works technically
-- **Update When**: New features, refactoring, tech stack changes
-- **Audience**: Developers, DevOps, technical stakeholders
+- **Purpose**: Understand how this repo is structured and how agents should work in it
+- **Update When**: Tech stack changes, new module folders, new patterns
+- **Audience**: Developers, AI agents, study-note maintainers
 
 ## Primary Stack
 
-| Layer | Technology | Version | Rationale |
-|-------|-----------|---------|-----------|
-| Language | [e.g., TypeScript] | [Version] | [Why this language] |
-| Framework | [e.g., Node.js] | [Version] | [Why this framework] |
-| Database | [e.g., PostgreSQL] | [Version] | [Why this database] |
-| Infrastructure | [e.g., AWS, Vercel] | [N/A] | [Why this infra] |
-| Key Libraries | [List important ones] | [Versions] | [Why each matters] |
+| Layer | Technology | Rationale |
+|-------|-----------|-----------|
+| Purpose | AI-103 exam prep: study notes + hands-on Azure practice | Agentic AI is the largest weighted section (30–35%) |
+| Cloud | Azure AI Foundry (Agent Service, projects) | Managed agents, model deployments, tools |
+| AI services | Azure OpenAI, AI Search, AI Speech, Document Intelligence, Content Understanding, Content Safety | Map to exam skill areas |
+| SDKs (Python) | `azure-ai-projects`, `azure-identity`, `agent-framework`, `semantic-kernel`, `python-dotenv` | Agent development + keyless auth |
+| Docs sources | Microsoft Learn (MCP server), Parallel Search, Context7 | Grounded, current documentation |
 
-## Architecture Pattern
-
-```
-Type: [Monolith | Microservices | Serverless | Agent-based | Hybrid]
-Pattern: [Brief description]
-Diagram: [Link to architecture diagram if exists]
-```
-
-### Why This Architecture?
-
-[Explain the business and technical reasons for this architecture choice. What problem does this architecture solve? What were alternatives considered?]
-
-## Project Structure
+## Repo Structure
 
 ```
-[Project Root]
-├── src/                    # Source code
-├── tests/                  # Test files
-├── docs/                   # Documentation
-├── scripts/                # Build/deploy scripts
-└── [Other key directories]
+modules/NN-<slug>/       # Per-module folders (01-ai-agent-fundamentals, ...)
+AI-103-Study-Guide.md    # Full exam skills (from Microsoft Learn)
+Agents.md                # Agentic deep-dive notes
+.opencode/context/       # Agent knowledge base
 ```
 
-**Key Directories**:
-- `src/` - Contains all application logic organized by [module/feature/domain]
-- `tests/` - [How tests are organized]
-- `docs/` - [What documentation lives here]
+## Study Notes Patterns
 
-## Key Technical Decisions
+- **Module folders**: `modules/NN-<module-slug>/` — numbered + official Microsoft Learn slug (e.g., `01-ai-agent-fundamentals`)
+- **Each module**: `README.md` (learning objectives, prerequisites, unit checklist, key takeaways) + `notes/` for unit-by-unit notes
+- **README format**: learning objectives → prerequisites → unit checklist table → key takeaways → notes → related resources
+- **Tracking**: checkbox lists (☐) for objectives and units, updated as modules are completed
 
-| Decision | Rationale | Impact |
-|----------|-----------|--------|
-| [Decision 1] | [Why this choice] | [What it enables] |
-| [Decision 2] | [Why this choice] | [What it enables] |
+## Doc-Fetching Workflow
 
-See `decisions-log.md` for full decision history with alternatives.
+- Fetch Microsoft content via **Microsoft Learn MCP** (search → code sample search → fetch for depth)
+- Fetch external libraries via **Context7 / ExternalScout** (mandatory for external packages — training data can be outdated)
+- Always cite source URLs (e.g., `learn.microsoft.com/...`) in study notes
+- For deep-dive notes, follow the structure used in `Agents.md` (concepts → tables → exam insights → hands-on)
 
-## Integration Points
+## Code Patterns (Azure SDK)
 
-| System | Purpose | Protocol | Direction |
-|--------|---------|----------|-----------|
-| [API 1] | [What it does] | [REST/GraphQL/gRPC] | [Inbound/Outbound] |
-| [Database] | [What it stores] | [PostgreSQL/Mongo/etc] | [Internal] |
-| [Service] | [What it provides] | [HTTP/gRPC] | [Outbound] |
+```python
+from azure.identity import DefaultAzureCredential
+credential = DefaultAzureCredential()  # CLI -> managed identity -> env
 
-## Technical Constraints
-
-| Constraint | Origin | Impact |
-|------------|--------|--------|
-| [Legacy systems] | [Business/Tech] | [What limitation it creates] |
-| [Compliance] | [Regulation] | [What must be followed] |
-| [Performance] | [SLAs] | [What must be met] |
-
-## Development Environment
-
-```
-Setup: [Quick setup command or link]
-Requirements: [What developers need installed]
-Local Dev: [How to run locally]
-Testing: [How to run tests]
+from azure.ai.projects import AIProjectClient
+project = AIProjectClient.from_connection_string(conn_str, credential=credential)
 ```
 
-## Deployment
+- Client + credential pattern: `AIProjectClient` / `FoundryChatClient` + `DefaultAzureCredential`
+- Never hardcode keys; use `.env` + `python-dotenv` (see `.opencode/env.example`)
 
-```
-Environment: [Production/Staging/Development]
-Platform: [Where it deploys]
-CI/CD: [Pipeline used]
-Monitoring: [Tools for observability]
-```
+## Naming Conventions
 
-## Onboarding Checklist
+| Type | Convention | Example |
+|------|-----------|---------|
+| Module dirs | `NN-<slug>` | `01-ai-agent-fundamentals` |
+| Notes files | kebab-case | `unit-2-notes.md` |
+| Markdown docs | PascalCase/Caps | `AI-103-Study-Guide.md` |
+| Code files | snake_case (Python) | `agent_client.py` |
 
-- [ ] Know the primary tech stack
-- [ ] Understand the architecture pattern and why it was chosen
-- [ ] Know the key project directories and their purpose
-- [ ] Understand major technical decisions and rationale
-- [ ] Know integration points and dependencies
-- [ ] Be able to set up local development environment
-- [ ] Know how to run tests and deploy
+## Code Standards
+
+- Python SDK client + `DefaultAzureCredential` pattern for all Azure code
+- Keyless auth — no API keys in code or docs
+- Config via `.env` + `python-dotenv`; env vars documented in `.opencode/env.example`
+- Notes follow MVI style: concise, scannable, tables over prose, code examples where helpful
+
+## Security Requirements
+
+- Managed identity / `DefaultAzureCredential` — never keys in code
+- Least privilege RBAC (Foundry User/Owner, Project Manager roles)
+- Treat conversation history and study content as potentially sensitive data
+- Use private networking / scoped APIs for production agent deployments (from `Agents.md` §14)
+
+## 📂 Codebase References
+
+- `Agents.md` — §9 Python SDK essentials, §14 production security & deployment
+- `AI-103-Study-Guide.md` — full exam skills measured
+- `modules/01-ai-agent-fundamentals/README.md` — module template example
+- `.opencode/env.example` — environment variable pattern
 
 ## Related Files
 
-- `business-domain.md` - Why this technical foundation exists
-- `business-tech-bridge.md` - How business needs map to technical solutions
-- `decisions-log.md` - Full decision history with context
+- `business-domain.md` — why this repo exists (study goal)
+- `decisions-log.md` — decision history
+- `living-notes.md` — open questions, active study items
