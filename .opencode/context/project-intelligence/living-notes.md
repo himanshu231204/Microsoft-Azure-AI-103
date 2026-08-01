@@ -31,18 +31,18 @@
 
 | Question | Stakeholders | Status | Next Action |
 |----------|--------------|--------|-------------|
-| Create remaining 6 module folders now or as reached? | himan | Open | Decide when starting M2 |
 | Fill `business-tech-bridge.md` template? | himan | Open | Map exam skills → technical topics |
 | Which Azure services to spin up for M1 exercise? | himan | Open | Check free-tier / Foundry portal |
+| Confirm course module list with actual AI-103T00-A outline? | himan | Open | Paste real module list from training portal |
 
 ### Open Question Details
 
-**Module folders timing**  
-*Context*: Modules 2–7 exist in the learning path; folder convention is established  
+**Course module list confirmation**  
+*Context*: Proposed 12-module structure based on exam sections + learning paths; actual AI-103T00-A module list not publicly available  
 *Stakeholders*: himan  
-*Options*: Create all now (structure complete) vs create on demand (cleaner, no empty dirs)  
-*Timeline*: Before M2 start  
-*Status*: Open
+*Options*: Use proposed structure (valid for exam prep) vs wait for exact course outline  
+*Timeline*: Before M1 start  
+*Status*: Open — proceed with proposed structure unless contradicted by actual course
 
 ## Known Issues
 
@@ -75,12 +75,13 @@
 ### Lessons Learned
 - Ground study in official docs (Learn MCP), not training data — AI docs drift fast
 - Establish conventions early (folder naming, note format) so agents stay consistent
+- Verify the actual course/learning path before building module structure — course mismatch wastes effort
 
 ## Patterns & Conventions
 
 ### Code Patterns Worth Preserving
 - `DefaultAzureCredential` keyless auth in all Azure code — lives in `technical-domain.md` §Code Patterns
-- Module README checklist format (objectives/units/key takeaways) — see `modules/01-ai-agent-fundamentals/README.md`
+- Module README checklist format (objectives/units/key takeaways) — see `modules/01-plan-and-prepare/README.md`
 
 ### Gotchas for Maintainers
 - Don't rename module folders without updating links in `Agents.md` §17–18 and `navigation.md`
@@ -90,8 +91,8 @@
 
 | Project | Goal | Owner | Timeline | Status |
 |---------|------|-------|----------|--------|
-| Module 1 study | Complete `ai-agent-fundamentals` (7 units) | himan | 2026-08-01 | ✅ Complete |
-| Module 2 prep | `develop-ai-agent-azure` — build first Foundry agent | himan | Next | Pending |
+| Module 01 study | Complete `plan-and-prepare` (9 units) | himan | 2026-08-01 | In Progress |
+| Module 02 prep | `create-consume-ai-services` — create and use Azure AI services | himan | Next | Pending |
 
 ## Archive (Resolved Items)
 
@@ -102,14 +103,14 @@
 
 ## Onboarding Checklist
 
-- [ ] Review open questions and decide on module-folder timing
+- [ ] Review open questions and decide on course module list confirmation
 - [ ] Convert M1 units to `notes/` as completed
-- [ ] Know current active project (Module 1)
+- [ ] Know current active project (Module 01)
 - [ ] Keep decisions-log and living-notes current
 
 ## 📂 Codebase References
 
-- `modules/01-ai-agent-fundamentals/README.md` — active study project referenced in Active Projects
+- `modules/01-plan-and-prepare/README.md` — active study project referenced in Active Projects
 - `Agents.md` — §17 study path, §18 project roadmap (drives "Next Action" items)
 - `.opencode/context/project-intelligence/technical-domain.md` — patterns referenced in Insights
 

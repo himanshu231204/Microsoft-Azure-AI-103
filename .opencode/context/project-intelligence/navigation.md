@@ -30,9 +30,10 @@
 **Repo quick routes**:
 | What You Need | File | Description |
 |---------------|------|-------------|
+| Course overview | `README.md` (repo root) | AI-103T00-A course structure, module list, progress tracker |
 | Exam skills measured | `AI-103-Study-Guide.md` (repo root) | Official skills + study resources |
 | Agent deep-dive | `Agents.md` (repo root) | Agentic AI concepts, SDKs, production |
-| Current module | `modules/01-ai-agent-fundamentals/` | Module 1 study notes (in progress) |
+| Current module | `modules/01-plan-and-prepare/` | Module 01 study notes (in progress) |
 
 ## Usage
 

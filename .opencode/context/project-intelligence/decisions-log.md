@@ -15,17 +15,17 @@
 ## Decision: Module folder structure `modules/NN-<slug>/`
 
 **Date**: 2026-08-01
-**Status**: Decided
+**Status**: Decided (updated)
 **Owner**: himan
 
 ### Context
-Starting the "Develop AI agents on Azure" learning path. Needed a consistent place for per-module study notes, with room for modules 2–7.
+Starting Course AI-103T00-A (4-day instructor-led). Needed a consistent place for per-module study notes, with room for all 12 course modules.
 
 ### Decision
-Use `modules/NN-<module-slug>/` folders: a two-digit number matching the learning-path order, plus the official Microsoft Learn module slug (e.g., `modules/01-ai-agent-fundamentals/`). Each module has a `README.md` (objectives, unit checklist, key takeaways) and a `notes/` directory.
+Use `modules/NN-<module-slug>/` folders: a two-digit number matching the course day/module order, plus a descriptive slug (e.g., `modules/01-plan-and-prepare/`). Each module has a `README.md` (objectives, unit checklist, key takeaways) and a `notes/` directory.
 
 ### Rationale
-Numbered prefixes keep modules ordered naturally; using the official slug keeps a stable 1:1 link to the Microsoft Learn module and avoids renaming if titles change.
+Numbered prefixes keep modules ordered naturally; using descriptive slugs keeps a stable link to the official course module and avoids renaming if titles change.
 
 ### Alternatives Considered
 | Alternative | Pros | Cons | Why Rejected? |
@@ -34,13 +34,13 @@ Numbered prefixes keep modules ordered naturally; using the official slug keeps 
 | Title-based names (e.g., `module-1-agents/`) | Human-readable | Breaks link to official slug, renaming risk | Official slug is stable & linkable |
 
 ### Impact
-- **Positive**: Consistent, ordered, extensible structure for 7 modules
+- **Positive**: Consistent, ordered, extensible structure for 12 modules
 - **Negative**: Folder names are technical (slugs), not friendly titles
 - **Risk**: Low
 
 ### Related
 - `technical-domain.md` — "Study Notes Patterns"
-- `modules/01-ai-agent-fundamentals/README.md` — first example
+- `modules/01-plan-and-prepare/README.md` — first example
 
 ---
 
@@ -108,11 +108,48 @@ Matches Microsoft production guidance (`Agents.md` §14: keyless & least privile
 
 ---
 
+## Decision: Restructure repo for AI-103T00-A course (12 modules)
+
+**Date**: 2026-08-01
+**Status**: Decided
+**Owner**: himan
+
+### Context
+Discovered user is taking Course AI-103T00-A (4-day instructor-led), not the self-paced "Develop AI agents on Azure" learning path (7 modules). The previous module structure was based on the wrong learning path and has been deleted.
+
+### Decision
+Restructure the repo with 12 module folders mapping to the 4-day course:
+- Day 1 (Modules 01–03): Plan & Manage Azure AI Solutions (Exam §1: 25–30%)
+- Day 2 (Modules 04–06): Generative AI Apps (Exam §2: 30–35%)
+- Day 3 (Modules 07–09): AI Agents (Exam §2 continued)
+- Day 4 (Modules 10–12): Vision, Text & Information Extraction (Exam §3–5: 35% total)
+
+### Rationale
+Aligns repo with the actual course the user is attending. The 12-module structure is based on exam sections + corresponding learning paths. Module list is a best-guess; will be confirmed/corrected when user shares the actual course outline from their training portal.
+
+### Alternatives Considered
+| Alternative | Pros | Cons | Why Rejected? |
+|-------------|------|------|---------------|
+| Wait for exact module list | Perfect accuracy | Blocks all module folder creation | Can proceed with exam-aligned structure now |
+| Keep self-paced learning path | Already created | Wrong course — user is in instructor-led | Mismatch with actual course |
+
+### Impact
+- **Positive**: Repo matches actual course, notes will be directly useful during class
+- **Negative**: Module list may need minor renaming if actual course differs
+- **Risk**: Low — structure is exam-aligned regardless of exact module names
+
+### Related
+- `README.md` — course overview with module table
+- `technical-domain.md` — course structure section
+- `business-domain.md` — project identity and success metrics
+
+---
+
 ## Deprecated Decisions
 
 | Decision | Date | Replaced By | Why |
 |----------|------|-------------|-----|
-| — | — | — | None yet |
+| Module structure based on self-paced learning path (7 modules) | 2026-08-01 | Course-based structure (12 modules) | User is taking AI-103T00-A (4-day instructor-led), not self-paced learning path |
 
 ## Onboarding Checklist
 
@@ -124,7 +161,7 @@ Matches Microsoft production guidance (`Agents.md` §14: keyless & least privile
 
 ## 📂 Codebase References
 
-- `modules/01-ai-agent-fundamentals/` — created per "module folder structure" decision
+- `modules/01-plan-and-prepare/` — created per "module folder structure" decision
 - `Agents.md` — §14 security/deploy patterns behind the keyless-auth decision
 - `.opencode/env.example` — env var pattern behind keyless config decision
 

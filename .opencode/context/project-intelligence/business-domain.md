@@ -15,8 +15,10 @@
 ```
 Project Name: Microsoft-Azure-AI-103 study workspace
 Tagline: Exam prep + hands-on Azure AI agent development
-Problem Statement: Need to pass AI-103 (Developing AI Apps and Agents on Azure)
-                    while building skills that translate to real AI engineering work.
+Course: AI-103T00-A: Develop AI apps and agents on Azure (4-day instructor-led)
+Exam: AI-103 — Developing AI Solutions on Azure
+Problem Statement: Need to pass AI-103 (score ≥700) while building skills
+                    that translate to real AI engineering work.
 Solution: Structured, grounded study notes + hands-on module practice in this repo,
           sourced from official Microsoft Learn documentation.
 ```
@@ -44,7 +46,7 @@ Solution: Structured, grounded study notes + hands-on module practice in this re
 | Metric | Definition | Target | Current |
 |--------|------------|--------|---------|
 | Exam pass | AI-103 score | ≥700 | Not taken |
-| Modules completed | Learning-path modules with checked-off units | 7/7 | 1/7 ✅ |
+| Modules completed | Course modules with checked-off units | 12/12 | 0/12 |
 | Hands-on projects | Roadmap levels built (Agents.md §18) | 8 levels | 0/8 |
 | Note coverage | Unit-by-unit notes in module folders | All units | M1 in progress |
 
@@ -65,8 +67,8 @@ Market Position: Solo study track toward AI-103 certification
 
 ## Roadmap Context
 
-**Current Focus**: Module 1 — Get started with AI agent development (`modules/01-ai-agent-fundamentals/`)
-**Next Milestone**: Complete M1 units + notes, then M2 (develop an AI agent with Foundry Agent Service)
+**Current Focus**: Module 01 — Plan and prepare to develop AI solutions on Azure (`modules/01-plan-and-prepare/`)
+**Next Milestone**: Complete M1 units + notes, then M2 (create and consume Azure AI services)
 **Long-term Vision**: Pass AI-103 and ship production-grade agents (containerized hosted agents, multi-agent orchestration, MCP tools)
 
 ## Business Constraints
@@ -88,7 +90,7 @@ Market Position: Solo study track toward AI-103 certification
 
 - `AI-103-Study-Guide.md` — exam skills this study goal targets
 - `Agents.md` — §17 skills map + §18 hands-on roadmap (the "how" behind this goal)
-- `modules/01-ai-agent-fundamentals/README.md` — current module being studied
+- `modules/01-plan-and-prepare/README.md` — current module being studied
 
 ## Related Files
 

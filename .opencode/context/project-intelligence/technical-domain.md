@@ -2,7 +2,7 @@
 
 # Technical Domain
 
-> Tech stack, structure, and patterns for this AI-103 study workspace (exam prep + hands-on Azure practice).
+> Tech stack, structure, and patterns for this AI-103T00-A study workspace (exam prep + hands-on Azure practice).
 
 ## Quick Reference
 
@@ -14,6 +14,7 @@
 
 | Layer | Technology | Rationale |
 |-------|-----------|-----------|
+| Course | AI-103T00-A: Develop AI apps and agents on Azure (4-day instructor-led) | Maps to Exam AI-103 |
 | Purpose | AI-103 exam prep: study notes + hands-on Azure practice | Agentic AI is the largest weighted section (30–35%) |
 | Cloud | Azure AI Foundry (Agent Service, projects) | Managed agents, model deployments, tools |
 | AI services | Azure OpenAI, AI Search, AI Speech, Document Intelligence, Content Understanding, Content Safety | Map to exam skill areas |
@@ -23,15 +24,25 @@
 ## Repo Structure
 
 ```
-modules/NN-<slug>/       # Per-module folders (01-ai-agent-fundamentals, ...)
+modules/NN-<slug>/       # Per-module folders (01-plan-and-prepare, 02-create-consume-ai-services, ...)
+README.md                # Course overview with module list and progress tracker
 AI-103-Study-Guide.md    # Full exam skills (from Microsoft Learn)
 Agents.md                # Agentic deep-dive notes
 .opencode/context/       # Agent knowledge base
 ```
 
+## Course Structure (AI-103T00-A)
+
+| Day | Modules | Exam Section | Weight |
+|-----|---------|-------------|--------|
+| 1 | 01–03: Plan & Manage Azure AI Solutions | §1 | 25–30% |
+| 2 | 04–06: Generative AI Apps | §2 | 30–35% |
+| 3 | 07–09: AI Agents | §2 (continued) | 30–35% |
+| 4 | 10–12: Vision, Text & Information Extraction | §3–5 | 35% total |
+
 ## Study Notes Patterns
 
-- **Module folders**: `modules/NN-<module-slug>/` — numbered + official Microsoft Learn slug (e.g., `01-ai-agent-fundamentals`)
+- **Module folders**: `modules/NN-<module-slug>/` — numbered + official Microsoft Learn slug (e.g., `01-plan-and-prepare`)
 - **Each module**: `README.md` (learning objectives, prerequisites, unit checklist, key takeaways) + `notes/` for unit-by-unit notes
 - **README format**: learning objectives → prerequisites → unit checklist table → key takeaways → notes → related resources
 - **Tracking**: checkbox lists (☐) for objectives and units, updated as modules are completed
@@ -83,7 +94,7 @@ project = AIProjectClient.from_connection_string(conn_str, credential=credential
 
 - `Agents.md` — §9 Python SDK essentials, §14 production security & deployment
 - `AI-103-Study-Guide.md` — full exam skills measured
-- `modules/01-ai-agent-fundamentals/README.md` — module template example
+- `modules/01-plan-and-prepare/README.md` — module template example
 - `.opencode/env.example` — environment variable pattern
 
 ## Related Files
