@@ -4,9 +4,12 @@
 > Built for both **AI-103 exam prep** and **real-world production skills** as an AI Engineer.
 > Source: Microsoft Learn (fetched via MCP) — study guide, Foundry Agent Service docs, Agent Framework, Semantic Kernel, MCP docs.
 >
-> **Related files**: [`AI-103-Study-Guide.md`](./AI-103-Study-Guide.md) (full exam skills), this file focuses on the **agentic** side.
+> **Course**: AI-103T00-A (4-day instructor-led) — 4 learning paths, 34 modules
+> **Exam**: AI-103 — Developing AI Solutions on Azure
+>
+> **Related files**: [`AI-103-Study-Guide.md`](./AI-103-Study-Guide.md) (full exam skills), [`README.md`](./README.md) (course module tracker).
 
----231204
+---
 
 ## Table of Contents
 
@@ -520,15 +523,39 @@ The exam teaches *what* Azure offers; **production skill is about the workflow**
 | **Text analysis (10–15%)** | Speech as agent modality (STT/TTS); translation flows |
 | **Information extraction (10–15%)** | Retrieval/grounding pipelines feeding agent tools; Content Understanding → clean grounded representations |
 
-### Suggested study path (agent-focused)
-1. **Get started with AI agent development on Azure** (module `ai-agent-fundamentals`)
-2. **Develop an AI agent with Azure AI Foundry Agent Service** (module `develop-ai-agent-azure`)
-3. **Integrate custom tools into your agent** (module `build-agent-with-custom-tools`)
-4. **Develop an AI agent with Semantic Kernel** (module `develop-ai-agent-with-semantic-kernel`)
-5. **Orchestrate a multi-agent solution using Semantic Kernel** (module `orchestrate-semantic-kernel-multi-agent-solution`)
-6. **Develop a multi-agent solution with Azure AI Foundry Agent Service** (module `develop-multi-agent-azure-ai-foundry`)
-7. **Integrate MCP Tools with Azure AI Agents** (module `connect-agent-to-mcp-tools`)
-8. Then: RAG, content understanding, speech, and evaluation modules to round out the other exam areas.
+### Mapping exam sections → course learning paths
+| Exam Section | Learning Path | Modules |
+| --- | --- | --- |
+| §1 Plan & manage (25–30%) | LP1: Develop generative AI apps in Azure | 1.1–1.8 (plan, deploy, SDK, RAG, fine-tune, responsible AI, eval) |
+| §2 Implement gen AI & agentic (30–35%) ⭐ | LP2: Develop AI agents on Azure | 2.1–2.9 (Foundry agents, custom tools, MCP, multi-agent, A2A) |
+| §2 (continued) | LP1: Generative AI (RAG, fine-tune, eval) | 1.5–1.8 |
+| §3 Computer vision (10–15%) | LP4: Extract insights from visual data | 4.1–4.8 (image analysis, OCR, faces, video, vision gen-AI) |
+| §4 Text analysis (10–15%) | LP3: Develop natural language solutions | 3.1–3.9 (text analytics, CLU, speech, translation) |
+| §5 Info extraction (10–15%) | LP4: Extract insights from visual data | 4.1–4.8 (includes content understanding) |
+
+### Suggested study path (agent-focused, mapped to course modules)
+1. **LP1: Develop generative AI apps** — Start here for foundations (§1 + §2 basics)
+   - Module 1.1: Plan and prepare to develop AI solutions on Azure
+   - Module 1.2: Choose and deploy models from the model catalog
+   - Module 1.3: Develop an AI app with the Azure AI Foundry SDK
+   - Module 1.5: Develop a RAG-based solution with your own data
+   - Module 1.7: Implement a responsible generative AI solution
+   - Module 1.8: Evaluate generative AI performance
+2. **LP2: Develop AI agents** — Core agent skills (§2 ⭐)
+   - Module 2.1: Develop AI agents with Foundry and VS Code
+   - Module 2.2: Integrate custom tools into your agent
+   - Module 2.3: Integrate MCP Tools with Azure AI Agents
+   - Module 2.7: Develop an AI agent with Microsoft Agent Framework
+   - Module 2.8: Orchestrate a multi-agent solution
+   - Module 2.9: Discover Azure AI Agents with A2A
+3. **LP3: Develop natural language solutions** — Text & speech (§4)
+   - Module 3.1: Analyze text with Azure AI Language
+   - Module 3.7: Create speech-enabled apps
+   - Module 3.9: Develop an audio-enabled generative AI application
+4. **LP4: Extract insights from visual data** — Vision & extraction (§3 + §5)
+   - Module 4.1: Analyze images
+   - Module 4.6: Analyze video
+   - Module 4.7: Develop a vision-enabled generative AI application
 
 ### Study tips
 - **Know the difference**: RAG vs Agent; Prompt vs Hosted agent; Function calling flow; Copilot vs Autonomous.
@@ -544,13 +571,21 @@ The exam teaches *what* Azure offers; **production skill is about the workflow**
 A progression that takes you from exam prep to production skills. Build each in this repo:
 
 1. **Level 1 — Prompt agent**: Create a prompt agent in the Foundry portal with Web Search + File Search. Consume it from Python via `azure-ai-projects`. ✓ exam basics
+   - *Course modules*: [1.1](modules/01-genai/01-plan-and-prepare/), [1.2](modules/01-genai/02-choose-deploy-models/), [1.3](modules/01-genai/03-develop-ai-app-foundry-sdk/)
 2. **Level 2 — Custom tools**: Add function calling (your own Python functions). Build the weather/calculator/CRM-lookup pattern.
+   - *Course modules*: [2.1](modules/02-agents/01-develop-agents-foundry-vscode/), [2.2](modules/02-agents/02-integrate-custom-tools/)
 3. **Level 3 — RAG grounding**: Index documents into Azure AI Search (hybrid/vector), ground an agent with the index. Use Content Understanding for document prep.
+   - *Course modules*: [1.5](modules/01-genai/05-rag-solution/), [2.4](modules/02-agents/04-knowledge-enhanced-agents-foundry-iq/)
 4. **Level 4 — Multi-agent**: Connected agents — build the *Contract Review Assistant* example (orchestrator + summarizer + compliance validator).
+   - *Course modules*: [2.8](modules/02-agents/08-orchestrate-multi-agent/), [2.9](modules/02-agents/09-discover-agents-a2a/)
 5. **Level 5 — Framework agent**: Rebuild Level 2 in **Microsoft Agent Framework** and in **Semantic Kernel**. Compare.
+   - *Course modules*: [2.7](modules/02-agents/07-develop-agent-agent-framework/)
 6. **Level 6 — MCP**: Expose an existing API as an MCP server (Container Apps); connect it to your agent via hosted MCP tool; try a Foundry Toolbox.
+   - *Course modules*: [2.3](modules/02-agents/03-integrate-mcp-tools/)
 7. **Level 7 — Production**: Package a hosted agent as a container → ACR → deploy with `azd`. Enable Application Insights tracing, add Entra Agent Identity + managed identity, set approval gates.
+   - *Course modules*: [1.7](modules/01-genai/07-responsible-generative-ai/), [2.6](modules/02-agents/06-agent-driven-workflows/)
 8. **Level 8 — Eval & guardrails**: Run evaluations (groundedness/relevance/safety), content filters, trace audit. 
+   - *Course modules*: [1.8](modules/01-genai/08-evaluate-genai-performance/)
 
 ---
 
