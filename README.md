@@ -9,6 +9,7 @@
 [![Modules](https://img.shields.io/badge/Modules-34-green?style=for-the-badge)](#course-structure)
 [![Last Updated](https://img.shields.io/badge/Last_Updated-2026--08--02-purple?style=for-the-badge)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](./LICENSE)
+[![Microsoft Learn Badge](https://img.shields.io/badge/Microsoft_Learn-Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 
 **Pass exam (score ≥700) + build production-grade AI agent skills**
 
@@ -102,6 +103,8 @@ The course has **4 learning paths** with **34 modules total**:
 
 ## Progress
 
+[![Microsoft Learn Achievement](https://img.shields.io/badge/Microsoft_Learn-Achievement_Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
+
 | Metric | Status |
 |--------|--------|
 | **Modules completed** | 1 / 34 |
@@ -126,6 +129,7 @@ The course has **4 learning paths** with **34 modules total**:
 [![Exam](https://img.shields.io/badge/Exam-AI103-blue?style=for-the-badge&logo=microsoft&logoColor=white)](https://learn.microsoft.com/credentials/certifications/exams/ai-103)
 [![Course](https://img.shields.io/badge/Course-AI103T00--A-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/training/courses/ai-103t00)
 [![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Portal-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
+[![Microsoft Learn Badge](https://img.shields.io/badge/Microsoft_Learn-Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 [![Status](https://img.shields.io/badge/Status-In_Progress-yellow?style=for-the-badge)](#progress)
 
 *Last updated: 2026-08-02*
