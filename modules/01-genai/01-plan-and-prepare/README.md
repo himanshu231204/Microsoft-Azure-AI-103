@@ -1,6 +1,10 @@
+<div align="center">
+
 [![Module Badge](https://img.shields.io/badge/Microsoft_Learn-Module_Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 
 # Module 1.1: Plan and Prepare to Develop AI Solutions on Azure
+
+</div>
 
 > **Source**: [Microsoft Learn — Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/training/modules/prepare-azure-ai-development/)
 > **Learning objectives**: Identify AI capabilities, describe Azure AI Services & Foundry, pick developer tools/SDKs, understand responsible AI
