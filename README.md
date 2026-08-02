@@ -32,9 +32,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 ## <a name="lp1"></a>Learning Path 1: Develop Generative AI Apps in Azure
 
-| # | Module | Status | Notes |
-|---|--------|--------|-------|
-| 1.1 | [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/training/modules/prepare-azure-ai-development/) | ✅ | [→](modules/01-genai/01-plan-and-prepare/) |
+| # | Module | Status | Notes | Practice |
+|---|--------|--------|-------|----------|
+| 1.1 | [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/training/modules/prepare-azure-ai-development/) | ✅ | [→](modules/01-genai/01-plan-and-prepare/) | [📝 50 Qs](modules/01-genai/01-plan-and-prepare/practice-questions.md) |
 | 1.2 | [Choose and deploy models from the model catalog in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/explore-models-azure-ai-studio/) | ☐ | [→](modules/01-genai/02-choose-deploy-models/) |
 | 1.3 | [Develop an AI app with the Azure AI Foundry SDK](https://learn.microsoft.com/training/modules/ai-foundry-sdk/) | ☐ | [→](modules/01-genai/03-develop-ai-app-foundry-sdk/) |
 | 1.4 | [Get started with prompt flow to develop language model apps in the Azure AI Foundry](https://learn.microsoft.com/training/modules/get-started-prompt-flow-ai-studio/) | ☐ | [→](modules/01-genai/04-prompt-flow/) |
