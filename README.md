@@ -7,7 +7,7 @@
 [![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Foundry_Portal-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
 [![Status](https://img.shields.io/badge/Status-In_Progress-yellow?style=for-the-badge)](#progress)
 [![Modules](https://img.shields.io/badge/Modules-34-green?style=for-the-badge)](#course-structure)
-[![Last Updated](https://img.shields.io/badge/Last_Updated-2026--08--01-purple?style=for-the-badge)](#)
+[![Last Updated](https://img.shields.io/badge/Last_Updated-2026--08--02-purple?style=for-the-badge)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](./LICENSE)
 
 **Pass exam (score ≥700) + build production-grade AI agent skills**
@@ -33,7 +33,7 @@ The course has **4 learning paths** with **34 modules total**:
 
 | # | Module | Status | Notes |
 |---|--------|--------|-------|
-| 1.1 | [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/training/modules/prepare-azure-ai-development/) | ☐ | [→](modules/01-genai/01-plan-and-prepare/) |
+| 1.1 | [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/training/modules/prepare-azure-ai-development/) | ✅ | [→](modules/01-genai/01-plan-and-prepare/) |
 | 1.2 | [Choose and deploy models from the model catalog in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/explore-models-azure-ai-studio/) | ☐ | [→](modules/01-genai/02-choose-deploy-models/) |
 | 1.3 | [Develop an AI app with the Azure AI Foundry SDK](https://learn.microsoft.com/training/modules/ai-foundry-sdk/) | ☐ | [→](modules/01-genai/03-develop-ai-app-foundry-sdk/) |
 | 1.4 | [Get started with prompt flow to develop language model apps in the Azure AI Foundry](https://learn.microsoft.com/training/modules/get-started-prompt-flow-ai-studio/) | ☐ | [→](modules/01-genai/04-prompt-flow/) |
@@ -104,9 +104,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 | Metric | Status |
 |--------|--------|
-| **Modules completed** | 0 / 34 |
+| **Modules completed** | 1 / 34 |
 | **Exam status** | Not taken |
-| **Current focus** | LP1 Module 1.1 — Plan and prepare to develop AI solutions on Azure |
+| **Current focus** | LP1 Module 1.2 — Choose and deploy models from the model catalog |
 
 ---
 
@@ -128,6 +128,6 @@ The course has **4 learning paths** with **34 modules total**:
 [![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Portal-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
 [![Status](https://img.shields.io/badge/Status-In_Progress-yellow?style=for-the-badge)](#progress)
 
-*Last updated: 2026-08-01*
+*Last updated: 2026-08-02*
 
 </div>
