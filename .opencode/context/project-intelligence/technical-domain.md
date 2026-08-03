@@ -1,4 +1,4 @@
-<!-- Context: project-intelligence/technical | Priority: critical | Version: 1.0 | Updated: 2026-08-01 -->
+<!-- Context: project-intelligence/technical | Priority: critical | Version: 1.1 | Updated: 2026-08-03 -->
 
 # Technical Domain
 
@@ -31,8 +31,21 @@ modules/
 └── 04-vision/         # LP4: Extract insights from visual data (8 modules)
 README.md              # Course overview with module list and progress tracker
 AI-103-Study-Guide.md  # Full exam skills (from Microsoft Learn)
-Agents.md              # Agentic deep-dive notes
+AGENTS.md              # Agent instruction file
+Context.md             # Primary knowledge base (Azure AI agents deep dive)
 .opencode/context/     # Agent knowledge base
+```
+
+**Module structure:**
+```
+modules/01-genai/01-plan-and-prepare/
+├── README.md              # Module overview, learning objectives
+├── practice-questions.md  # 50 practice Qs
+├── notes/                 # Unit-by-unit detailed notes
+│   ├── unit-1.md
+│   ├── unit-2.md
+│   └── ...
+└── .gitkeep
 ```
 
 ## Course Structure (AI-103T00-A)
@@ -47,8 +60,19 @@ Agents.md              # Agentic deep-dive notes
 ## Study Notes Patterns
 
 - **Module folders**: `modules/NN-<learning-path-slug>/` — numbered learning path with sub-modules (e.g., `modules/01-genai/01-plan-and-prepare/`)
-- **Each module**: `README.md` (learning objectives, prerequisites, unit checklist, key takeaways) + `notes/` for unit-by-unit notes
+- **Each module structure**:
+  ```
+  NN-module-name/
+  ├── README.md              # Module overview, learning objectives, prerequisites
+  ├── practice-questions.md  # 50 practice Qs per module
+  ├── notes/                 # Unit-by-unit detailed notes
+  │   ├── unit-1.md
+  │   ├── unit-2.md
+  │   └── ...
+  └── .gitkeep
+  ```
 - **README format**: learning objectives → prerequisites → unit checklist table → key takeaways → notes → related resources
+- **Notes format**: one file per unit (`notes/unit-N.md`), concise scannable content
 - **Tracking**: checkbox lists (☐) for objectives and units, updated as modules are completed
 
 ## Doc-Fetching Workflow
