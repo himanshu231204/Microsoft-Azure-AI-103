@@ -51,7 +51,74 @@ Each model card shows:
 
 ---
 
-## 3. Model Families You Should Know
+## 3. Select Models Using Benchmarks
+
+The model catalog provides **benchmark data** and a **leaderboard** to help you compare models objectively before deploying.
+
+### How to Access Benchmarks
+1. Go to **Discover** in the Foundry portal navigation bar
+2. The model catalog overview shows a **snapshot of the leaderboard** at the top
+3. Select **Go to leaderboard** for the full list, or click a model → **Benchmarks** tab
+
+> **Note**: Benchmark data isn't available for all models. If a model doesn't have a **Benchmarks** tab, results haven't been published yet.
+
+### Four Benchmark Dimensions
+
+| Dimension | What It Measures | Interpretation |
+|-----------|-----------------|----------------|
+| **Quality index** | Reasoning, coding, math, knowledge tasks | Higher = better (0–1 scale) |
+| **Safety scores** | Robustness against harmful content (HarmBench) | Lower attack success rate = better |
+| **Estimated cost** | Actual cost to run benchmark datasets (USD) | Lower = cheaper |
+| **Throughput** | Tokens per second processed | Higher = faster |
+
+### Benchmark Tools in Foundry
+
+| Tool | What It Does |
+|------|-------------|
+| **Model Leaderboard** | Sortable table of all benchmarked models across all four dimensions |
+| **Trade-off charts** | Visual scatter plot comparing two metrics (e.g., quality vs. cost) |
+| **Scenario leaderboards** | Filter by use case: Reasoning, Coding, Math, Q&A, Groundedness |
+| **Side-by-side comparison** | Select 2–3 models to compare features, performance, and cost |
+
+### Scenario Leaderboards
+
+Use scenario-specific leaderboards to find models optimized for your use case:
+
+| Scenario | Datasets | What It Tells You |
+|----------|----------|-------------------|
+| **Reasoning** | BIG-Bench Hard (1K subsample) | Logical and multi-step reasoning ability |
+| **Coding** | BigCodeBench, LiveBench, MBPPPlus | Code generation accuracy |
+| **Math** | MATH (500 subsample) | Mathematical reasoning |
+| **Question & Answering** | Arena-Hard, GPQA (diamond) | Adversarial human preference QA |
+| **General Knowledge** | MMLU-Pro (1K subsample) | Broad factual knowledge |
+| **Groundedness** | TruthfulQA (MC1) | Truthfulness, resistance to hallucination |
+
+### Interpreting Results
+
+- **Quality index**: Average of accuracy scores across datasets (exact_match, pass@1, arena_hard). Higher = stronger.
+- **Safety**: Attack Success Rate (ASR) from HarmBench — lower = more robust. Important for customer-facing apps.
+- **Performance**: Includes latency (P50/P90/P95/P99), time-to-first-token (TTFT), and throughput (GTPS/TTPS).
+- **Cost**: Computed from actual token consumption during benchmarks, not just pricing estimates.
+
+### Trade-off Chart Tips
+- Use **Compare quality against** dropdown to switch between cost, throughput, or safety
+- Models closer to the **top-right corner** perform well on both axes
+- At least **two models** required for trade-off comparisons
+
+### Limitations
+- Benchmarks use standardized public datasets — your real-world results may differ
+- Performance metrics collected with synthetic workloads (fixed input/output ratio, single region)
+- For testing with your own data, use **Evaluate your generative AI apps** instead
+- Leaderboard is in **preview** — not all modalities/models are included
+
+### Prerequisites to Access Leaderboard
+- Paid Azure subscription (free/trial won't work)
+- A Foundry project with at least **Reader** role
+- Access to [ai.azure.com](https://ai.azure.com)
+
+---
+
+## 4. Model Families You Should Know
 
 ### Azure OpenAI Models (sold by Azure)
 
@@ -80,7 +147,7 @@ Each model card shows:
 
 ---
 
-## 4. Deployment Types
+## 5. Deployment Types
 
 ### Serverless API Deployment (most common)
 - **No infrastructure to manage** — pay per inference call
@@ -110,7 +177,7 @@ Each model card shows:
 
 ---
 
-## 5. Deploying a Model — Step by Step
+## 6. Deploying a Model — Step by Step
 
 ### Serverless API Deployment (Portal)
 1. Find model in catalog → **Deploy** → **Default settings** (or Custom)
@@ -135,7 +202,7 @@ When deploying via SDK/REST, you need:
 
 ---
 
-## 6. Testing Your Model
+## 7. Testing Your Model
 
 ### Playground (Portal)
 - After deployment, you land in the **Foundry Playground**
@@ -158,7 +225,7 @@ When deploying via SDK/REST, you need:
 
 ---
 
-## 7. Optimizing Model Performance
+## 8. Optimizing Model Performance
 
 ### Prompt Engineering
 - **System message** — set role, constraints, format requirements
@@ -183,7 +250,7 @@ When deploying via SDK/REST, you need:
 
 ---
 
-## 8. Responsible AI in Model Selection
+## 9. Responsible AI in Model Selection
 
 ### Content Filtering (default: ON)
 - Detects harmful content across categories: **Hate, Self-Harm, Sexual, Violence**
@@ -205,7 +272,7 @@ When deploying via SDK/REST, you need:
 
 ---
 
-## 9. Python SDK — Deploying & Consuming a Model
+## 10. Python SDK — Deploying & Consuming a Model
 
 ### Install
 ```bash
@@ -238,16 +305,18 @@ print(response.choices[0].message.content)
 
 ---
 
-## 10. Key Takeaways
+## 11. Key Takeaways
 
 1. The **model catalog** is your starting point — filter by collection, task, modality
-2. **Models sold by Azure** = enterprise SLA + Microsoft support; **Partner models** = specialized + community-driven
-3. **Serverless API** = zero infra, pay-per-call; **Managed compute** = dedicated VMs, more control
-4. **Deployment name** = the `model` parameter in your API calls
-5. **Playground** = instant testing after deployment
-6. **Optimize**: prompt engineering → RAG → fine-tuning (progressive complexity)
-7. **Content filtering** is on by default — never disable without good reason
-8. Match the **model to the scenario** — don't use GPT-4o when GPT-4o-mini suffices
+2. Use **benchmarks** (quality, safety, cost, throughput) to compare models objectively before deploying
+3. **Scenario leaderboards** help find models optimized for your specific use case (coding, math, reasoning)
+4. **Models sold by Azure** = enterprise SLA + Microsoft support; **Partner models** = specialized + community-driven
+5. **Serverless API** = zero infra, pay-per-call; **Managed compute** = dedicated VMs, more control
+6. **Deployment name** = the `model` parameter in your API calls
+7. **Playground** = instant testing after deployment
+8. **Optimize**: prompt engineering → RAG → fine-tuning (progressive complexity)
+9. **Content filtering** is on by default — never disable without good reason
+10. Match the **model to the scenario** — don't use GPT-4o when GPT-4o-mini suffices
 
 ---
 
@@ -266,4 +335,4 @@ print(response.choices[0].message.content)
 
 ---
 
-*Last updated: 2026-08-02 · Source: [Microsoft Learn — Module 1.2](https://learn.microsoft.com/en-us/training/modules/explore-models-azure-ai-studio/)*
+*Last updated: 2026-08-03 · Source: [Microsoft Learn — Module 1.2](https://learn.microsoft.com/en-us/training/modules/explore-models-azure-ai-studio/)*
