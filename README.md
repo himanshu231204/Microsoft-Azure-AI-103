@@ -7,7 +7,7 @@
 [![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Foundry_Portal-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
 [![Status](https://img.shields.io/badge/Status-In_Progress-yellow?style=for-the-badge)](#progress)
 [![Modules](https://img.shields.io/badge/Modules-34-green?style=for-the-badge)](#course-structure)
-[![Last Updated](https://img.shields.io/badge/Last_Updated-2026--08--03-purple?style=for-the-badge)](#)
+[![Last Updated](https://img.shields.io/badge/Last_Updated-2026--08--04-purple?style=for-the-badge)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](./LICENSE)
 [![Microsoft Learn Badge](https://img.shields.io/badge/Microsoft_Learn-Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 
@@ -50,7 +50,7 @@ The course has **4 learning paths** with **34 modules total**:
 | # | Module | Status | Notes | Practice |
 |---|--------|--------|-------|----------|
 | 2.1 | [Develop AI agents with Microsoft Foundry and Visual Studio Code](https://learn.microsoft.com/training/modules/develop-ai-agents-azure-vs-code/) | ✅ | [→](modules/02-agents/01-develop-agents-foundry-vscode/) | [📝 50 Qs](modules/02-agents/01-develop-agents-foundry-vscode/practice-questions.md) |
-| 2.2 | [Integrate custom tools into your agent](https://learn.microsoft.com/training/modules/build-agent-with-custom-tools/) | ☐ | [→](modules/02-agents/02-integrate-custom-tools/) |
+| 2.2 | [Integrate custom tools into your agent](https://learn.microsoft.com/training/modules/build-agent-with-custom-tools/) | ✅ | [→](modules/02-agents/02-integrate-custom-tools/) | [📝 50 Qs](modules/02-agents/02-integrate-custom-tools/practice-questions.md) |
 | 2.3 | [Integrate MCP Tools with Azure AI Agents](https://learn.microsoft.com/training/modules/connect-agent-to-mcp-tools/) | ☐ | [→](modules/02-agents/03-integrate-mcp-tools/) |
 | 2.4 | [Build knowledge-enhanced AI agents with Foundry IQ](https://learn.microsoft.com/training/modules/introduction-foundry-iq/) | ☐ | [→](modules/02-agents/04-knowledge-enhanced-agents-foundry-iq/) |
 | 2.5 | [Integrate your agent with Microsoft 365](https://learn.microsoft.com/training/modules/integrate-foundry-agent-with-m365/) | ☐ | [→](modules/02-agents/05-integrate-agent-m365/) |
@@ -107,9 +107,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 | Metric | Status |
 |--------|--------|
-| **Modules completed** | 9 / 34 |
+| **Modules completed** | 10 / 34 |
 | **Exam status** | Not taken |
-| **Current focus** | LP2 Module 2.1 — Develop AI agents with Microsoft Foundry and Visual Studio Code |
+| **Current focus** | LP2 Module 2.3 — Integrate MCP Tools with Azure AI Agents |
 
 ---
 
