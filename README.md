@@ -47,9 +47,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 ## <a name="lp2"></a>Learning Path 2: Develop AI Agents on Azure
 
-| # | Module | Status | Notes |
-|---|--------|--------|-------|
-| 2.1 | [Develop AI agents with Microsoft Foundry and Visual Studio Code](https://learn.microsoft.com/training/modules/develop-ai-agents-azure-vs-code/) | ☐ | [→](modules/02-agents/01-develop-agents-foundry-vscode/) |
+| # | Module | Status | Notes | Practice |
+|---|--------|--------|-------|----------|
+| 2.1 | [Develop AI agents with Microsoft Foundry and Visual Studio Code](https://learn.microsoft.com/training/modules/develop-ai-agents-azure-vs-code/) | ✅ | [→](modules/02-agents/01-develop-agents-foundry-vscode/) | [📝 50 Qs](modules/02-agents/01-develop-agents-foundry-vscode/practice-questions.md) |
 | 2.2 | [Integrate custom tools into your agent](https://learn.microsoft.com/training/modules/build-agent-with-custom-tools/) | ☐ | [→](modules/02-agents/02-integrate-custom-tools/) |
 | 2.3 | [Integrate MCP Tools with Azure AI Agents](https://learn.microsoft.com/training/modules/connect-agent-to-mcp-tools/) | ☐ | [→](modules/02-agents/03-integrate-mcp-tools/) |
 | 2.4 | [Build knowledge-enhanced AI agents with Foundry IQ](https://learn.microsoft.com/training/modules/introduction-foundry-iq/) | ☐ | [→](modules/02-agents/04-knowledge-enhanced-agents-foundry-iq/) |
@@ -107,7 +107,7 @@ The course has **4 learning paths** with **34 modules total**:
 
 | Metric | Status |
 |--------|--------|
-| **Modules completed** | 8 / 34 |
+| **Modules completed** | 9 / 34 |
 | **Exam status** | Not taken |
 | **Current focus** | LP2 Module 2.1 — Develop AI agents with Microsoft Foundry and Visual Studio Code |
 
