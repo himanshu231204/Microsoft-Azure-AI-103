@@ -7,7 +7,8 @@
 </div>
 
 > **Source**: [Microsoft Learn — Get started with prompt flow to develop language model apps in the Azure AI Foundry](https://learn.microsoft.com/training/modules/get-started-prompt-flow-ai-studio/)
-> **Learning objectives**: Understand the development lifecycle for LLM apps, understand flow types, explore core components including connections and runtimes, and understand variants and monitoring
+> **Learning objectives**: Understand the development lifecycle when creating language model applications, understand what a flow is in prompt flow, explore the core components when working with prompt flow
+> **Module units (8)**: Introduction · Understand the development lifecycle of an LLM app · Understand core components and explore flow types · Explore connections and runtimes · Explore variants and monitoring options · Exercise · Module assessment · Summary
 
 ---
 
@@ -121,6 +122,20 @@ Prompt flow offers three distinct flow types for different scenarios:
 - Evaluates performance and outputs relevant metrics
 - Used for assessing model/application quality
 
+### Creating a Flow
+
+You can create a flow in three ways:
+
+| Method | Description |
+|--------|-------------|
+| **Clone from gallery** | Start from built-in samples/templates available in the gallery |
+| **Create from scratch** | Start a new flow from a Standard/Chat/Evaluation flow type |
+| **Import files** | Import existing flow files from local storage or a file share |
+
+Each flow folder contains a `flow.dag.yaml` file (the flow definition), source code files, and system folders.
+
+> **Exam insight**: Flows are defined in **`flow.dag.yaml`**. Create from the gallery, from scratch, or by importing existing flow files.
+
 ---
 
 ## 4. Core Components of a Flow
@@ -174,6 +189,8 @@ outputs:
 
 > **Exam insight**: LLM and Prompt tools use **Jinja templating** (`{{variable}}`) to dynamically generate prompts based on inputs.
 
+> **Exam insight**: The **LLM tool does not support reasoning models** (e.g., OpenAI o-series). For reasoning model integration, use the **Python tool** to call the model APIs directly.
+
 ---
 
 ## 5. Connections and Runtimes
@@ -189,6 +206,15 @@ Connections are resources that link your flow to external services:
 | **Azure AI Search** | Vector search, indexing |
 | **Custom** | Any endpoint with API keys |
 
+### Connection Authentication
+
+For Azure OpenAI connections, prompt flow supports two authentication modes:
+
+| Auth mode | When to use |
+|-----------|-------------|
+| **API Key** | Development, quick setup |
+| **Microsoft Entra ID** | Production, managed identity / role-based access |
+
 ### Creating Connections
 
 ```python
@@ -198,7 +224,7 @@ Connections are resources that link your flow to external services:
 # 3. Python SDK
 ```
 
-> **Exam insight**: Connections are defined at the workspace level and can be shared across multiple flows within the same project.
+> **Exam insight**: Connections are defined at the workspace level and can be shared across multiple flows within the same project. Azure OpenAI connections support **API Key** or **Microsoft Entra ID** authentication.
 
 ### Compute Sessions (Runtimes)
 
@@ -271,8 +297,20 @@ Prompt flow supports GenAIOps practices:
 |---------|-------------|
 | **Centralized code** | Single repository for all flows |
 | **Lifecycle management** | Local experimentation → production deployment |
+| **Variant & hyperparameter experimentation** | Test combinations of variants across multiple nodes |
+| **Multiple deployment targets** | Docker images deployable to App Service, Kubernetes, Azure managed compute |
 | **A/B deployment** | Compare different flow versions in production |
+| **Many-to-many dataset-to-flow relationships** | Multiple datasets per standard and evaluation flow |
+| **Conditional data & model registration** | Register new dataset/model versions only when data changes |
 | **Comprehensive reporting** | Detailed metrics for variant configurations |
+
+### Enterprise Readiness
+
+| Benefit | Description |
+|---------|-------------|
+| **Collaboration** | Multiple users work together, share knowledge, maintain version control |
+| **All-in-one platform** | Development → evaluation → deployment → monitoring in one place |
+| **Enterprise readiness solutions** | Secure, scalable, reliable foundation for flows |
 
 > **Exam insight**: Variants enable systematic prompt engineering by allowing you to test multiple configurations and compare results before deploying to production.
 
@@ -286,10 +324,12 @@ Prompt flow supports GenAIOps practices:
 2. **Three flow types**: Standard, Chat, Evaluation
 3. **DAG visualization** = Directed Acyclic Graph showing workflow structure
 4. **Nodes** = individual tools (LLM, Python, Prompt, etc.)
-5. **Connections** = links to external services (Azure OpenAI, AI Search, etc.)
+5. **Connections** = links to external services (Azure OpenAI, AI Search, etc.); Azure OpenAI supports API Key or Microsoft Entra ID auth
 6. **Compute sessions** = managed runtime for executing flows
 7. **Variants** = different versions of LLM nodes for comparison
 8. **Jinja templating** = `{{variable}}` syntax for dynamic prompts
+9. **LLM tool does NOT support reasoning models** — use the Python tool to call reasoning model APIs
+10. **Retirement**: Prompt flow retires **April 20, 2027** — migrate to Microsoft Agent Framework
 
 ### Flow Type Decision Matrix
 
@@ -324,10 +364,10 @@ Prompt flow supports GenAIOps practices:
 
 ---
 
-> ⚠️ **Important Note**: Prompt flow in Microsoft Foundry and Azure Machine Learning will be **retired on April 20, 2027**. It is no longer recommended for new development. Migrate existing Prompt flow applications to **Microsoft Agent Framework** before the retirement date.
+> ⚠️ **Important Note**: Prompt flow in Microsoft Foundry and Azure Machine Learning will be **retired on April 20, 2027**. It is no longer recommended for new development. Prompt flow container images (including `promptflow-runtime`, `promptflow-runtime-stable`, and `promptflow-python`) are no longer receiving security or package updates. After retirement, the web authoring experience, VS Code extensions, and related container images will no longer be supported. Migrate existing Prompt flow applications and deployments to **Microsoft Agent Framework** before the retirement date.
 
 ---
 
 [![Module Badge](https://img.shields.io/badge/Microsoft_Learn-Module_Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 
-*Notes created: 2026-08-03 · Source: Microsoft Learn module via MCP*
+*Notes created: 2026-08-03 · Updated: 2026-08-04 · Source: Microsoft Learn module via MCP*

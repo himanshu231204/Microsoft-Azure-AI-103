@@ -1,7 +1,7 @@
 <div align="center">
 
 # Module 1.4: Get Started with Prompt Flow
-## Practice Questions (50)
+## Practice Questions (60)
 
 </div>
 
@@ -867,6 +867,178 @@ Microsoft Agent Framework is the recommended alternative for new development aft
 
 ---
 
+### Section 6: Reasoning Models, Auth, and GenAIOps (10 questions)
+
+**51. Which prompt flow tool does NOT support reasoning models like OpenAI o-series?**
+
+A) Python tool
+B) LLM tool
+C) Serp API tool
+D) Content Safety tool
+
+<details>
+<summary>Answer</summary>
+
+**B) LLM tool**
+
+The LLM tool in prompt flow doesn't support reasoning models. For reasoning model integration, use the Python tool to call the model APIs directly.
+</details>
+
+---
+
+**52. How should you integrate a reasoning model into a prompt flow?**
+
+A) Use the LLM tool with a reasoning model connection
+B) Use the Python tool to call the model APIs directly
+C) Use the Serp API tool
+D) Reasoning models cannot be used with prompt flow at all
+
+<details>
+<summary>Answer</summary>
+
+**B) Use the Python tool to call the model APIs directly**
+
+Since the LLM tool doesn't support reasoning models, the recommended approach is to call reasoning model APIs from the Python tool.
+</details>
+
+---
+
+**53. Which two authentication modes does prompt flow support for Azure OpenAI connections?**
+
+A) API Key and Microsoft Entra ID
+B) Username/Password and API Key
+C) Certificate and SAS token
+D) Anonymous and API Key
+
+<details>
+<summary>Answer</summary>
+
+**A) API Key and Microsoft Entra ID**
+
+Prompt flow supports either API Key or Microsoft Entra ID authentication for Azure OpenAI resources.
+</details>
+
+---
+
+**54. Which auth mode is preferred for production scenarios?**
+
+A) API Key
+B) Microsoft Entra ID
+C) Anonymous
+D) Shared Access Signature
+
+<details>
+<summary>Answer</summary>
+
+**B) Microsoft Entra ID**
+
+Microsoft Entra ID authentication enables managed identity and role-based access, which is the preferred approach for production.
+</details>
+
+---
+
+**55. Which of the following is NOT a way to create a prompt flow?**
+
+A) Clone from the gallery
+B) Create from scratch
+C) Import existing flow files from a file share
+D) Generate automatically from a deployed endpoint
+
+<details>
+<summary>Answer</summary>
+
+**D) Generate automatically from a deployed endpoint**
+
+You can create a flow by cloning gallery samples, creating from scratch, or importing existing flow files — but not by generating from a deployed endpoint.
+</details>
+
+---
+
+**56. What file defines a prompt flow's structure?**
+
+A) requirements.txt
+B) flow.dag.yaml
+C) main.py
+D) config.json
+
+<details>
+<summary>Answer</summary>
+
+**B) flow.dag.yaml**
+
+Each flow folder contains a flow.dag.yaml file that defines the flow's structure, along with source code files and system folders.
+</details>
+
+---
+
+**57. Which GenAIOps feature allows deploying flows to App Service, Kubernetes, and Azure managed compute?**
+
+A) A/B deployment
+B) Multiple deployment targets
+C) Centralized code hosting
+D) Comprehensive reporting
+
+<details>
+<summary>Answer</summary>
+
+**B) Multiple deployment targets**
+
+The platform generates Docker images infused with your flow and compute session, deployable to any target platform that supports Docker — including Azure App Service, Kubernetes, and Azure managed compute.
+</details>
+
+---
+
+**58. What does "conditional data and model registration" do in GenAIOps?**
+
+A) Registers new dataset/model versions only when the data changes
+B) Always registers every run
+C) Deletes old datasets automatically
+D) Registers models only in production
+
+<details>
+<summary>Answer</summary>
+
+**A) Registers new dataset/model versions only when the data changes**
+
+The platform registers a new dataset version for the data asset and flows in the model registry only when there's a change in the dataset.
+</details>
+
+---
+
+**59. Which benefit of prompt flow enables multiple users to work together and maintain version control?**
+
+A) All-in-one platform
+B) Collaboration
+C) Variants
+D) Evaluation flows
+
+<details>
+<summary>Answer</summary>
+
+**B) Collaboration**
+
+Prompt flow supports team collaboration so multiple users can work together on prompt engineering projects, share knowledge, and maintain version control.
+</details>
+
+---
+
+**60. What is the status of prompt flow container images as of 2026?**
+
+A) Receiving regular security updates
+B) No longer receiving updates, including security and package updates
+C) Only receiving minor updates
+D) Receiving updates until 2030
+
+<details>
+<summary>Answer</summary>
+
+**B) No longer receiving updates, including security and package updates**
+
+Prompt flow container images (including promptflow-runtime, promptflow-runtime-stable, and promptflow-python) are no longer receiving updates, including security and package updates, ahead of the April 20, 2027 retirement.
+</details>
+
+---
+
 ### Score Tracking
 
 | Section | Questions | Your Score |
@@ -876,8 +1048,9 @@ Microsoft Agent Framework is the recommended alternative for new development aft
 | Section 3: Connections and Runtimes | 21-30 | __ / 10 |
 | Section 4: Variants and Monitoring | 31-40 | __ / 10 |
 | Section 5: Advanced Topics | 41-50 | __ / 10 |
-| **Total** | **1-50** | **__ / 50** |
+| Section 6: Reasoning Models, Auth, and GenAIOps | 51-60 | __ / 10 |
+| **Total** | **1-60** | **__ / 60** |
 
 ---
 
-*Practice questions created: 2026-08-03 · Based on Microsoft Learn Module 1.4*
+*Practice questions created: 2026-08-03 · Updated: 2026-08-04 · Based on Microsoft Learn Module 1.4*
