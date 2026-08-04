@@ -7,7 +7,8 @@
 </div>
 
 > **Source**: [Microsoft Learn — Develop a RAG-based solution with your own data using Azure AI Foundry](https://learn.microsoft.com/training/modules/build-copilot-ai-studio/)
-> **Learning objectives**: Identify the need to ground your language model with RAG, index your data with Azure AI Search, build an agent using RAG on your own data in Azure AI Foundry portal
+> **Learning objectives**: Identify the need to ground your language model with Retrieval Augmented Generation (RAG), index your data with Azure AI Search to make it searchable for language models, build an agent using RAG on your own data in the Azure AI Foundry portal
+> **Module units (8)**: Introduction · Understand how to ground your language model · Make your data searchable · Create a RAG-based client application · Implement RAG in a prompt flow · Exercise · Module assessment · Summary
 
 ---
 
@@ -18,11 +19,12 @@
 3. [Indexes — Making Your Data Searchable](#3-indexes--making-your-data-searchable)
 4. [Azure AI Search — The RAG Index Store](#4-azure-ai-search--the-rag-index-store)
 5. [Data Import — Push vs Pull](#5-data-import--push-vs-pull)
-6. [Agentic RAG — Modern Retrieval Architecture](#6-agentic-rag--modern-retrieval-architecture)
-7. [Building RAG in Azure AI Foundry](#7-building-rag-in-azure-ai-foundry)
-8. [RAG Implementation Patterns](#8-rag-implementation-patterns)
-9. [Security, Cost, and Troubleshooting](#9-security-cost-and-troubleshooting)
-10. [Key Takeaways for AI-103](#10-key-takeaways-for-ai-103)
+6. [Agentic RAG vs Classic RAG — Choosing a Retrieval Architecture](#6-agentic-rag-vs-classic-rag--choosing-a-retrieval-architecture)
+7. [Content Preparation and Relevance](#7-content-preparation-and-relevance)
+8. [Building RAG in Azure AI Foundry](#8-building-rag-in-azure-ai-foundry)
+9. [RAG Implementation Patterns](#9-rag-implementation-patterns)
+10. [Security, Cost, and Troubleshooting](#10-security-cost-and-troubleshooting)
+11. [Key Takeaways for AI-103](#11-key-takeaways-for-ai-103)
 
 ---
 
@@ -54,6 +56,18 @@ RAG addresses this by **retrieving relevant content from your data** and includi
 | **Index** | A data structure optimized for retrieval (keyword, semantic, vector, or hybrid search) |
 | **Embeddings** | Numeric representations of content used for vector similarity search |
 | **System message** | Instructions that guide how the model uses retrieved content |
+
+### The Challenges of RAG
+
+While conceptually simple, RAG implementations face real challenges:
+
+| Challenge | Description |
+|-----------|-------------|
+| **Query understanding** | Users ask complex, conversational, or vague questions. Keyword search fails when queries don't match document terminology — retrieval must understand intent, not just match words |
+| **Multi-source data access** | Enterprise content spans SharePoint, databases, blob storage, and more. Creating a unified search corpus without disrupting data operations is essential |
+| **Token constraints** | LLMs accept limited token inputs. Retrieval must return highly relevant, concise results — not exhaustive document dumps |
+| **Response time expectations** | Users expect AI-powered answers in seconds. Retrieval must balance thoroughness with speed |
+| **Security and governance** | Opening private content to LLMs requires granular access control — users and agents must only retrieve authorized content |
 
 > **Exam insight**: Know the difference between RAG and fine-tuning. RAG adds **fresh knowledge**; fine-tuning changes **model behavior/style**.
 
@@ -137,7 +151,17 @@ RAG works best when you can retrieve relevant content **quickly and consistently
 | SharePoint (M365) | Documents |
 | OneLake | Lakehouse storage |
 
-> **Exam insight**: Azure AI Search supports both **classic search** (single index, predictable queries) and **agentic retrieval** (multi-query, LLM-assisted planning).
+### Choosing Between Agentic Retrieval and Classic RAG
+
+| Use **agentic retrieval** when… | Use **classic RAG** when… |
+|--------------------------------|---------------------------|
+| Your client is an agent or chatbot | You need generally available (GA) features only |
+| You need the highest possible relevance and accuracy | Simplicity and speed are priorities over advanced relevance |
+| Your queries are complex or conversational | You have existing orchestration code you want to preserve |
+| You want structured responses with citations and query details | You need fine-grained control over the query pipeline |
+| You're building **new** RAG implementations | |
+
+> **Exam insight**: Azure AI Search supports both **classic search** (single index, predictable queries) and **agentic retrieval** (multi-query, LLM-assisted planning). Microsoft recommends **agentic retrieval for new RAG builds**; classic RAG for GA features, simplicity, and existing orchestration.
 
 ---
 
@@ -169,11 +193,20 @@ Azure AI Search supports two methods for populating an index:
 | **Supports** | AI enrichment, integrated vectorization |
 | **Best for** | Supported data sources, automated pipelines |
 
-> **Exam insight**: If you need **AI enrichment** or **integrated vectorization**, you MUST use the pull method (indexers).
+### Knowledge Sources (Agentic Retrieval)
+
+For **agentic retrieval**, Azure AI Search uses **knowledge sources** that **auto-generate the chunking and vectorization pipelines** for you — no need to build a custom indexer/skillset.
+
+| Approach | Pipeline |
+|----------|----------|
+| **Agentic retrieval** | Use knowledge sources (auto chunking + vectorization) |
+| **Classic RAG** | Use indexers and skillsets to build custom pipelines, or push pre-processed content via the push API |
+
+> **Exam insight**: If you need **AI enrichment** or **integrated vectorization**, you MUST use the pull method (indexers). For agentic retrieval, **knowledge sources** auto-generate chunking and vectorization.
 
 ---
 
-## 6. Agentic RAG — Modern Retrieval Architecture
+## 6. Agentic RAG vs Classic RAG — Choosing a Retrieval Architecture
 
 **Agentic retrieval** (agentic RAG) is an evolution that uses a model to break down complex queries into multiple focused subqueries.
 
@@ -197,9 +230,76 @@ Azure AI Search supports two methods for populating an index:
 
 > **Exam insight**: Agentic RAG is ideal for **complex multi-turn conversations** and **enterprise scenarios** with large datasets.
 
+### Choosing an Approach in Foundry
+
+Foundry supports multiple patterns for working with private data. Choose based on your use case complexity and how much control you need:
+
+| Need | Approach |
+|------|----------|
+| Answers grounded in **private or frequently changing data** | **RAG** |
+| Change **model behavior, style, or task performance** (not fresh knowledge) | **Fine-tuning** |
+| Building an **agent** that needs retrieval as a tool | **Agent tools** (e.g., File search tool for agents) |
+
+> **Exam insight**: RAG = grounding in private data · Fine-tuning = changing behavior · Agent tools = retrieval as a tool for agents. These are complementary, not interchangeable.
+
 ---
 
-## 7. Building RAG in Azure AI Foundry
+## 7. Content Preparation and Relevance
+
+RAG quality depends on how you prepare content for retrieval and how you query the index.
+
+### Content Preparation
+
+| Content challenge | How Azure AI Search helps |
+|-------------------|---------------------------|
+| **Large documents** | Automatic chunking (built-in or via skills) |
+| **Multiple languages** | More than 50 language analyzers, multilingual vectors |
+| **Images and PDFs** | OCR, image analysis, image verbalization, document extraction skills |
+| **Need for similarity search** | Integrated vectorization (Azure OpenAI, Azure Vision, custom) |
+| **Terminology mismatches** | Synonym maps, semantic ranking |
+
+### Data Pipeline Steps
+
+When indexing, each media file goes through the data pipeline:
+
+```
+Chunk → Enrich (metadata) → Embed (vectorize) → Persist (search index)
+```
+
+1. **Chunking** — break the file into semantically relevant parts, ideally one idea/concept per chunk
+2. **Enrich chunks** — add metadata fields (title, summary, keywords)
+3. **Embed chunks** — use an embedding model to vectorize the chunk + metadata used for vector search
+4. **Persist chunks** — store the chunks in the search index
+
+### Maximizing Relevance and Recall
+
+During indexing:
+
+- **Chunking** subdivides large documents so portions can be matched independently
+- **Vectorization** creates the embeddings used for vector queries
+
+On the query side, to ensure the most relevant results:
+
+1. **Use hybrid queries** — combine keyword (nonvector) + vector search for maximum recall. A text string and its vector equivalent generate parallel queries, returning the most relevant matches from each in a unified result set
+2. **Use semantic ranking** — built into agentic retrieval, optional for classic RAG
+3. **Apply scoring profiles** — boost specific fields or criteria
+4. **Tune vector query parameters** — vector weighting and minimum thresholds to exclude low-scoring results
+
+> **Exam insight**: RAG quality = **content preparation** (chunking, enrichment, embedding) + **retrieval configuration** (hybrid queries, semantic ranking, scoring profiles). Poor data preparation directly impacts response quality.
+
+---
+
+## 8. Building RAG in Azure AI Foundry
+
+### Getting Started with RAG in Foundry
+
+Implementing RAG in Foundry typically follows this workflow:
+
+1. **Prepare your data** — organize and chunk your private documents or knowledge base into searchable content
+2. **Set up an index** — create an Azure AI Search index (or use another retrieval service)
+3. **Connect to Foundry** — create a connection from your Foundry project to your index (represented as a project connection or an *index asset ID*)
+4. **Build your RAG application** — integrate retrieval with your LLM calls using the Foundry SDK or REST APIs
+5. **Test and evaluate** — verify retrieval quality and that responses are accurate and properly cited
 
 ### RAG in Foundry Portal (No-Code)
 
@@ -208,53 +308,57 @@ Azure AI Search supports two methods for populating an index:
 3. **Build an agent** with retrieval as a tool
 4. **Test** in the playground
 
-### RAG with Foundry SDK (Code)
+### RAG with the Azure OpenAI Client ("On Your Data")
+
+The module's client application uses the **Azure OpenAI SDK** with the Chat Completions API and the **`data_sources` extension** to ground responses directly in an Azure AI Search index:
+
+```python
+from openai import AzureOpenAI
+
+client = AzureOpenAI(
+    azure_endpoint=AZURE_OPENAI_ENDPOINT,
+    api_key=AZURE_OPENAI_KEY,
+    api_version="2024-06-01",
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Which tent is the most waterproof?"}],
+    extra_body={
+        "data_sources": [{
+            "type": "azure_search",
+            "parameters": {
+                "endpoint": AZURE_SEARCH_ENDPOINT,
+                "index_name": "products-index",
+                "authentication": {"type": "api_key", "key": AZURE_SEARCH_KEY},
+            },
+        }],
+    },
+)
+print(response.choices[0].message.content)
+```
+
+### RAG with the Foundry SDK (`azure-ai-projects`)
+
+For a code-first approach, use the **`azure-ai-projects`** SDK with `AIProjectClient` and a `.prompty` prompt template that instructs the model to ground answers in retrieved documents:
 
 ```python
 from azure.identity import DefaultAzureCredential
-from azure.search.documents import SearchClient
-from openai import AzureOpenAI
+from azure.ai.projects import AIProjectClient
 
-# Connect to Azure AI Search
-search_client = SearchClient(
-    endpoint=AZURE_SEARCH_SERVICE,
-    index_name="your-index",
-    credential=DefaultAzureCredential()
+project = AIProjectClient.from_connection_string(
+    conn_str=os.environ["AIPROJECT_CONNECTION_STRING"],
+    credential=DefaultAzureCredential(),
 )
 
-# Connect to Azure OpenAI
-openai_client = AzureOpenAI(
-    api_version="2024-06-01",
-    azure_endpoint=AZURE_OPENAI_ACCOUNT,
-    azure_ad_token_provider=token_provider
+# Retrieve relevant product documents from the search index
+documents = get_product_documents(project, query)
+
+# Generate a response grounded in the retrieved documents
+response = project.inference.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": grounded_prompt(query, documents)}],
 )
-
-# RAG workflow
-query = "What products do you offer?"
-
-# Step 1: Retrieve relevant documents
-search_results = search_client.search(
-    search_text=query,
-    top=5,
-    select=["ProductName", "Description", "Category"]
-)
-
-# Step 2: Format grounding data
-sources = "\n".join([
-    f"{doc['ProductName']}: {doc['Description']}"
-    for doc in search_results
-])
-
-# Step 3: Generate grounded response
-response = openai_client.chat.completions.create(
-    messages=[{
-        "role": "user",
-        "content": f"Answer using only these sources:\n{sources}\n\nQuery: {query}"
-    }],
-    model="gpt-4"
-)
-
-print(response.choices[0].message.content)
 ```
 
 ### RAG with Prompt Flow
@@ -265,11 +369,11 @@ print(response.choices[0].message.content)
   Embed query    Search index    Generate response
 ```
 
-> **Exam insight**: Know the three approaches: **Foundry Portal** (no-code), **Foundry SDK** (code), and **Prompt Flow** (visual workflow).
+> **Exam insight**: Know the approaches: **Foundry Portal** (no-code), **Azure OpenAI client "on your data"** (Chat Completions `data_sources` extension), **Foundry SDK** (`azure-ai-projects` + `.prompty`), and **Prompt Flow** (visual workflow).
 
 ---
 
-## 8. RAG Implementation Patterns
+## 9. RAG Implementation Patterns
 
 ### Pattern 1: Simple RAG
 
@@ -308,7 +412,7 @@ User → Agent → Query Planning → Parallel Subqueries → Knowledge Sources 
 
 ---
 
-## 9. Security, Cost, and Troubleshooting
+## 10. Security, Cost, and Troubleshooting
 
 ### Security Considerations
 
@@ -340,7 +444,7 @@ User → Agent → Query Planning → Parallel Subqueries → Knowledge Sources 
 
 ---
 
-## 10. Key Takeaways for AI-103
+## 11. Key Takeaways for AI-103
 
 ### Must-Know Facts
 
@@ -348,9 +452,12 @@ User → Agent → Query Planning → Parallel Subqueries → Knowledge Sources 
 2. **Azure AI Search** is the recommended index store for RAG scenarios
 3. **Four retrieval modes**: Keyword, Semantic, Vector, Hybrid
 4. **Push vs Pull** — Push for real-time/custom; Pull for automated/enrichment
-5. **Agentic RAG** = modern approach with parallel subqueries and context awareness
-6. **Three implementation paths**: Foundry Portal (no-code), Foundry SDK (code), Prompt Flow (visual)
-7. **RAG vs Fine-tuning** — RAG adds knowledge; fine-tuning changes behavior
+5. **Agentic RAG vs Classic RAG** — agentic for new builds/agents/complex queries; classic for GA features/simplicity/existing orchestration
+6. **RAG challenges**: query understanding, multi-source data, token constraints, response time, security/governance
+7. **Content preparation**: chunk → enrich → embed → persist; hybrid queries + semantic ranking maximize relevance
+8. **Implementation paths**: Foundry Portal (no-code), Azure OpenAI client "on your data", Foundry SDK (`azure-ai-projects` + `.prompty`), Prompt Flow (visual)
+9. **RAG vs Fine-tuning** — RAG adds knowledge; fine-tuning changes behavior
+10. **Agent tools** — use retrieval as a tool when building an agent
 
 ### Connections to Other Modules
 
@@ -360,11 +467,12 @@ User → Agent → Query Planning → Parallel Subqueries → Knowledge Sources 
 | Azure AI Search | Module 3.x (Language solutions), Module 4.x (Vision) |
 | Foundry SDK | Module 1.3 (Develop AI app with Foundry SDK) |
 | Prompt Flow | Module 1.4 (Get started with Prompt Flow) |
-| Agent with retrieval | Module 2.x (Develop AI Agents) |
+| Agent with retrieval | Module 2.x (Develop AI Agents), Module 2.4 (Foundry IQ knowledge) |
+| RAG vs fine-tuning decision | Module 1.6 (Fine-tune a language model) |
 | Evaluation | Module 1.8 (Evaluate generative AI performance) |
 
 ---
 
 [![Module Badge](https://img.shields.io/badge/Microsoft_Learn-Module_Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 
-*Notes created: 2026-08-04 · Source: Microsoft Learn module via MCP*
+*Notes created: 2026-08-04 · Updated: 2026-08-04 · Source: Microsoft Learn module via MCP*

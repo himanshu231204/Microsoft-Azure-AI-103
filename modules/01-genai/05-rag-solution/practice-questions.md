@@ -336,6 +336,70 @@
 
 ---
 
+## Agentic vs Classic, Content Prep, and Modern Builds (Q51–Q60)
+
+**Q51.** When should you use agentic retrieval over classic RAG?
+- A) When you need GA features only
+- B) When your client is an agent or chatbot and you need the highest relevance
+- C) When you need fine-grained control over the query pipeline
+- D) When simplicity and speed are the top priorities
+
+**Q52.** When is classic RAG preferred?
+- A) For new RAG implementations
+- B) When you need structured responses with citations
+- C) When you have existing orchestration code you want to preserve
+- D) When queries are complex and conversational
+
+**Q53.** Which of the following is a challenge of RAG implementations?
+- A) Too much documentation
+- B) Token constraints — LLMs accept limited token inputs
+- C) Lack of available models
+- D) No need for access control
+
+**Q54.** What does a knowledge source do in agentic retrieval?
+- A) Stores the trained model weights
+- B) Auto-generates the chunking and vectorization pipelines
+- C) Replaces the LLM
+- D) Handles user authentication
+
+**Q55.** What is the correct order of the RAG data pipeline steps?
+- A) Embed → Chunk → Persist → Enrich
+- B) Chunk → Enrich → Embed → Persist
+- C) Persist → Embed → Chunk → Enrich
+- D) Enrich → Persist → Chunk → Embed
+
+**Q56.** Which technique maximizes recall by combining keyword and vector search?
+- A) Scoring profiles only
+- B) Hybrid queries
+- C) Synonym maps only
+- D) Semantic ranking only
+
+**Q57.** What do scoring profiles do in Azure AI Search?
+- A) Delete low-scoring documents
+- B) Boost specific fields or criteria
+- C) Change the model temperature
+- D) Increase the index size
+
+**Q58.** Which Azure AI Search feature addresses terminology mismatches?
+- A) Vector weighting
+- B) Synonym maps and semantic ranking
+- C) OCR
+- D) Indexers
+
+**Q59.** Which SDK approach does the module's client application use to ground responses in a search index?
+- A) azure-search-documents only
+- B) Azure OpenAI client with the Chat Completions `data_sources` extension ("on your data")
+- C) Azure Cognitive Services SDK
+- D) Azure Storage SDK
+
+**Q60.** Which SDK is used for a code-first RAG app in the Foundry portal?
+- A) azure-ai-projects (AIProjectClient)
+- B) azure-storage-blob
+- C) azure-keyvault-secrets
+- D) azure-monitor-opentelemetry only
+
+---
+
 ## Answers
 
 | Q | Answer | Q | Answer | Q | Answer | Q | Answer | Q | Answer |
@@ -350,7 +414,9 @@
 | 8 | B | 18 | B | 28 | B | 38 | B | 48 | B |
 | 9 | C | 19 | A | 29 | B | 39 | B | 49 | A |
 | 10 | B | 20 | C | 30 | B | 40 | B | 50 | B |
+| 51 | B | 52 | C | 53 | B | 54 | B | 55 | B |
+| 56 | B | 57 | B | 58 | B | 59 | B | 60 | A |
 
 ---
 
-*Practice questions created: 2026-08-04 · Source: Microsoft Learn module content*
+*Practice questions created: 2026-08-04 · Updated: 2026-08-04 · Source: Microsoft Learn module content*
