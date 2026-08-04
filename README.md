@@ -39,7 +39,7 @@ The course has **4 learning paths** with **34 modules total**:
 | 1.3 | [Develop an AI app with the Azure AI Foundry SDK](https://learn.microsoft.com/training/modules/ai-foundry-sdk/) | ✅ | [→](modules/01-genai/03-develop-ai-app-foundry-sdk/) | [📝 50 Qs](modules/01-genai/03-develop-ai-app-foundry-sdk/practice-questions.md) |
 | 1.4 | [Get started with prompt flow to develop language model apps in the Azure AI Foundry](https://learn.microsoft.com/training/modules/get-started-prompt-flow-ai-studio/) | ✅ | [→](modules/01-genai/04-prompt-flow/) | [📝 50 Qs](modules/01-genai/04-prompt-flow/practice-questions.md) |
 | 1.5 | [Develop a RAG-based solution with your own data using Azure AI Foundry](https://learn.microsoft.com/training/modules/build-copilot-ai-studio/) | ✅ | [→](modules/01-genai/05-rag-solution/) | [📝 50 Qs](modules/01-genai/05-rag-solution/practice-questions.md) |
-| 1.6 | [Fine-tune a language model with Azure AI Foundry](https://learn.microsoft.com/training/modules/finetune-model-copilot-ai-studio/) | ☐ | [→](modules/01-genai/06-fine-tune-language-model/) |
+| 1.6 | [Fine-tune a language model with Azure AI Foundry](https://learn.microsoft.com/training/modules/finetune-model-copilot-ai-studio/) | ✅ | [→](modules/01-genai/06-fine-tune-language-model/) | [📝 50 Qs](modules/01-genai/06-fine-tune-language-model/practice-questions.md) |
 | 1.7 | [Implement a responsible generative AI solution in Azure AI Foundry](https://learn.microsoft.com/training/modules/responsible-ai-studio/) | ☐ | [→](modules/01-genai/07-responsible-generative-ai/) |
 | 1.8 | [Evaluate generative AI performance in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/evaluate-models-azure-ai-studio/) | ☐ | [→](modules/01-genai/08-evaluate-genai-performance/) |
 
@@ -107,9 +107,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 | Metric | Status |
 |--------|--------|
-| **Modules completed** | 5 / 34 |
+| **Modules completed** | 6 / 34 |
 | **Exam status** | Not taken |
-| **Current focus** | LP1 Module 1.6 — Fine-tune a language model |
+| **Current focus** | LP1 Module 1.7 — Implement a responsible generative AI solution |
 
 ---
 
