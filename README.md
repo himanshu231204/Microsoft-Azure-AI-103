@@ -41,7 +41,7 @@ The course has **4 learning paths** with **34 modules total**:
 | 1.5 | [Develop a RAG-based solution with your own data using Azure AI Foundry](https://learn.microsoft.com/training/modules/build-copilot-ai-studio/) | ✅ | [→](modules/01-genai/05-rag-solution/) | [📝 50 Qs](modules/01-genai/05-rag-solution/practice-questions.md) |
 | 1.6 | [Fine-tune a language model with Azure AI Foundry](https://learn.microsoft.com/training/modules/finetune-model-copilot-ai-studio/) | ✅ | [→](modules/01-genai/06-fine-tune-language-model/) | [📝 50 Qs](modules/01-genai/06-fine-tune-language-model/practice-questions.md) |
 | 1.7 | [Implement a responsible generative AI solution in Azure AI Foundry](https://learn.microsoft.com/training/modules/responsible-ai-studio/) | ✅ | [→](modules/01-genai/07-responsible-generative-ai/) | [📝 50 Qs](modules/01-genai/07-responsible-generative-ai/practice-questions.md) |
-| 1.8 | [Evaluate generative AI performance in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/evaluate-models-azure-ai-studio/) | ☐ | [→](modules/01-genai/08-evaluate-genai-performance/) |
+| 1.8 | [Evaluate generative AI performance in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/evaluate-models-azure-ai-studio/) | ✅ | [→](modules/01-genai/08-evaluate-genai-performance/) | [📝 50 Qs](modules/01-genai/08-evaluate-genai-performance/practice-questions.md) |
 
 ---
 
@@ -107,9 +107,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 | Metric | Status |
 |--------|--------|
-| **Modules completed** | 7 / 34 |
+| **Modules completed** | 8 / 34 |
 | **Exam status** | Not taken |
-| **Current focus** | LP1 Module 1.8 — Evaluate generative AI performance |
+| **Current focus** | LP2 Module 2.1 — Develop AI agents with Microsoft Foundry and Visual Studio Code |
 
 ---
 
