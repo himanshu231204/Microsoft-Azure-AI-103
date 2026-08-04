@@ -38,7 +38,7 @@ The course has **4 learning paths** with **34 modules total**:
 | 1.2 | [Choose and deploy models from the model catalog in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/explore-models-azure-ai-studio/) | ✅ | [→](modules/01-genai/02-choose-deploy-models/) | [📝 50 Qs](modules/01-genai/02-choose-deploy-models/practice-questions.md) |
 | 1.3 | [Develop an AI app with the Azure AI Foundry SDK](https://learn.microsoft.com/training/modules/ai-foundry-sdk/) | ✅ | [→](modules/01-genai/03-develop-ai-app-foundry-sdk/) | [📝 50 Qs](modules/01-genai/03-develop-ai-app-foundry-sdk/practice-questions.md) |
 | 1.4 | [Get started with prompt flow to develop language model apps in the Azure AI Foundry](https://learn.microsoft.com/training/modules/get-started-prompt-flow-ai-studio/) | ✅ | [→](modules/01-genai/04-prompt-flow/) | [📝 50 Qs](modules/01-genai/04-prompt-flow/practice-questions.md) |
-| 1.5 | [Develop a RAG-based solution with your own data using Azure AI Foundry](https://learn.microsoft.com/training/modules/build-copilot-ai-studio/) | ☐ | [→](modules/01-genai/05-rag-solution/) |
+| 1.5 | [Develop a RAG-based solution with your own data using Azure AI Foundry](https://learn.microsoft.com/training/modules/build-copilot-ai-studio/) | ✅ | [→](modules/01-genai/05-rag-solution/) | [📝 50 Qs](modules/01-genai/05-rag-solution/practice-questions.md) |
 | 1.6 | [Fine-tune a language model with Azure AI Foundry](https://learn.microsoft.com/training/modules/finetune-model-copilot-ai-studio/) | ☐ | [→](modules/01-genai/06-fine-tune-language-model/) |
 | 1.7 | [Implement a responsible generative AI solution in Azure AI Foundry](https://learn.microsoft.com/training/modules/responsible-ai-studio/) | ☐ | [→](modules/01-genai/07-responsible-generative-ai/) |
 | 1.8 | [Evaluate generative AI performance in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/evaluate-models-azure-ai-studio/) | ☐ | [→](modules/01-genai/08-evaluate-genai-performance/) |
@@ -107,9 +107,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 | Metric | Status |
 |--------|--------|
-| **Modules completed** | 4 / 34 |
+| **Modules completed** | 5 / 34 |
 | **Exam status** | Not taken |
-| **Current focus** | LP1 Module 1.5 — Develop a RAG-based solution |
+| **Current focus** | LP1 Module 1.6 — Fine-tune a language model |
 
 ---
 
@@ -132,6 +132,6 @@ The course has **4 learning paths** with **34 modules total**:
 [![Microsoft Learn Badge](https://img.shields.io/badge/Microsoft_Learn-Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 [![Status](https://img.shields.io/badge/Status-In_Progress-yellow?style=for-the-badge)](#progress)
 
-*Last updated: 2026-08-03*
+*Last updated: 2026-08-04*
 
 </div>
