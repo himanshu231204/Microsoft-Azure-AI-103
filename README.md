@@ -2,11 +2,9 @@
 
 # AI-103: Microsoft Certified: Azure AI Apps and Agents Developer Associate
 
-[Official certification: Azure AI Apps and Agents Developer Associate](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/?practice-assessment-type=certification)
-
-AI-103 exam prep: study notes, practice questions, an exam guide, and a 34-module progress tracker.
-
-## Why I Chose This Certification
+[Official certification: ](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/?practice-assessment-type=certification)
+ 
+ ## Why I Chose This Certification
 
 I've been using Microsoft Foundry (formerly Azure AI Foundry), Azure AI Search, the Azure Cosmos DB toolkit, and Foundry IQ to build agents. I chose this certification to broaden my understanding of Azure AI services, discover features I haven't explored, and make better architectural decisions when building code-first AI solutions.
 
