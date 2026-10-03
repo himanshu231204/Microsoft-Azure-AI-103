@@ -1,6 +1,6 @@
 <div align="center">
 
-# AI-103T00-A: Develop AI Apps and Agents on Azure
+# AI-103: Microsoft Certified: Azure AI Apps and Agents Developer Associate
 
 [Official certification: Azure AI Apps and Agents Developer Associate](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/?practice-assessment-type=certification)
 
