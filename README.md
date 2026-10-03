@@ -5,9 +5,9 @@
 [![Exam](https://img.shields.io/badge/Exam-AI103-blue?style=for-the-badge&logo=microsoft&logoColor=white)](https://learn.microsoft.com/credentials/certifications/exams/ai-103)
 [![Course](https://img.shields.io/badge/Course-AI103T00--A-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/training/courses/ai-103t00)
 [![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Foundry_Portal-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
-[![Status](https://img.shields.io/badge/Status-In_Progress-yellow?style=for-the-badge)](#progress)
+[![Status](https://img.shields.io/badge/Status-Not_Started-lightgrey?style=for-the-badge)](#progress)
 [![Modules](https://img.shields.io/badge/Modules-34-green?style=for-the-badge)](#course-structure)
-[![Last Updated](https://img.shields.io/badge/Last_Updated-2026--08--04-purple?style=for-the-badge)](#)
+[![Last Updated](https://img.shields.io/badge/Last_Updated-2026--10--03-purple?style=for-the-badge)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](./LICENSE)
 [![Microsoft Learn Badge](https://img.shields.io/badge/Microsoft_Learn-Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
 
@@ -34,14 +34,14 @@ The course has **4 learning paths** with **34 modules total**:
 
 | # | Module | Status | Notes | Practice |
 |---|--------|--------|-------|----------|
-| 1.1 | [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/training/modules/prepare-azure-ai-development/) | ✅ | [→](modules/01-genai/01-plan-and-prepare/) | [📝 50 Qs](modules/01-genai/01-plan-and-prepare/practice-questions.md) |
-| 1.2 | [Choose and deploy models from the model catalog in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/explore-models-azure-ai-studio/) | ✅ | [→](modules/01-genai/02-choose-deploy-models/) | [📝 50 Qs](modules/01-genai/02-choose-deploy-models/practice-questions.md) |
-| 1.3 | [Develop an AI app with the Azure AI Foundry SDK](https://learn.microsoft.com/training/modules/ai-foundry-sdk/) | ✅ | [→](modules/01-genai/03-develop-ai-app-foundry-sdk/) | [📝 50 Qs](modules/01-genai/03-develop-ai-app-foundry-sdk/practice-questions.md) |
-| 1.4 | [Get started with prompt flow to develop language model apps in the Azure AI Foundry](https://learn.microsoft.com/training/modules/get-started-prompt-flow-ai-studio/) | ✅ | [→](modules/01-genai/04-prompt-flow/) | [📝 50 Qs](modules/01-genai/04-prompt-flow/practice-questions.md) |
-| 1.5 | [Develop a RAG-based solution with your own data using Azure AI Foundry](https://learn.microsoft.com/training/modules/build-copilot-ai-studio/) | ✅ | [→](modules/01-genai/05-rag-solution/) | [📝 50 Qs](modules/01-genai/05-rag-solution/practice-questions.md) |
-| 1.6 | [Fine-tune a language model with Azure AI Foundry](https://learn.microsoft.com/training/modules/finetune-model-copilot-ai-studio/) | ✅ | [→](modules/01-genai/06-fine-tune-language-model/) | [📝 50 Qs](modules/01-genai/06-fine-tune-language-model/practice-questions.md) |
-| 1.7 | [Implement a responsible generative AI solution in Azure AI Foundry](https://learn.microsoft.com/training/modules/responsible-ai-studio/) | ✅ | [→](modules/01-genai/07-responsible-generative-ai/) | [📝 50 Qs](modules/01-genai/07-responsible-generative-ai/practice-questions.md) |
-| 1.8 | [Evaluate generative AI performance in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/evaluate-models-azure-ai-studio/) | ✅ | [→](modules/01-genai/08-evaluate-genai-performance/) | [📝 50 Qs](modules/01-genai/08-evaluate-genai-performance/practice-questions.md) |
+| 1.1 | [Plan and prepare to develop AI solutions on Azure](https://learn.microsoft.com/training/modules/prepare-azure-ai-development/) | ☐ | [→](modules/01-genai/01-plan-and-prepare/) | [📝 50 Qs](modules/01-genai/01-plan-and-prepare/practice-questions.md) |
+| 1.2 | [Choose and deploy models from the model catalog in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/explore-models-azure-ai-studio/) | ☐ | [→](modules/01-genai/02-choose-deploy-models/) | [📝 50 Qs](modules/01-genai/02-choose-deploy-models/practice-questions.md) |
+| 1.3 | [Develop an AI app with the Azure AI Foundry SDK](https://learn.microsoft.com/training/modules/ai-foundry-sdk/) | ☐ | [→](modules/01-genai/03-develop-ai-app-foundry-sdk/) | [📝 50 Qs](modules/01-genai/03-develop-ai-app-foundry-sdk/practice-questions.md) |
+| 1.4 | [Get started with prompt flow to develop language model apps in the Azure AI Foundry](https://learn.microsoft.com/training/modules/get-started-prompt-flow-ai-studio/) | ☐ | [→](modules/01-genai/04-prompt-flow/) | [📝 50 Qs](modules/01-genai/04-prompt-flow/practice-questions.md) |
+| 1.5 | [Develop a RAG-based solution with your own data using Azure AI Foundry](https://learn.microsoft.com/training/modules/build-copilot-ai-studio/) | ☐ | [→](modules/01-genai/05-rag-solution/) | [📝 50 Qs](modules/01-genai/05-rag-solution/practice-questions.md) |
+| 1.6 | [Fine-tune a language model with Azure AI Foundry](https://learn.microsoft.com/training/modules/finetune-model-copilot-ai-studio/) | ☐ | [→](modules/01-genai/06-fine-tune-language-model/) | [📝 50 Qs](modules/01-genai/06-fine-tune-language-model/practice-questions.md) |
+| 1.7 | [Implement a responsible generative AI solution in Azure AI Foundry](https://learn.microsoft.com/training/modules/responsible-ai-studio/) | ☐ | [→](modules/01-genai/07-responsible-generative-ai/) | [📝 50 Qs](modules/01-genai/07-responsible-generative-ai/practice-questions.md) |
+| 1.8 | [Evaluate generative AI performance in Azure AI Foundry portal](https://learn.microsoft.com/training/modules/evaluate-models-azure-ai-studio/) | ☐ | [→](modules/01-genai/08-evaluate-genai-performance/) | [📝 50 Qs](modules/01-genai/08-evaluate-genai-performance/practice-questions.md) |
 
 ---
 
@@ -49,8 +49,8 @@ The course has **4 learning paths** with **34 modules total**:
 
 | # | Module | Status | Notes | Practice |
 |---|--------|--------|-------|----------|
-| 2.1 | [Develop AI agents with Microsoft Foundry and Visual Studio Code](https://learn.microsoft.com/training/modules/develop-ai-agents-azure-vs-code/) | ✅ | [→](modules/02-agents/01-develop-agents-foundry-vscode/) | [📝 50 Qs](modules/02-agents/01-develop-agents-foundry-vscode/practice-questions.md) |
-| 2.2 | [Integrate custom tools into your agent](https://learn.microsoft.com/training/modules/build-agent-with-custom-tools/) | ✅ | [→](modules/02-agents/02-integrate-custom-tools/) | [📝 50 Qs](modules/02-agents/02-integrate-custom-tools/practice-questions.md) |
+| 2.1 | [Develop AI agents with Microsoft Foundry and Visual Studio Code](https://learn.microsoft.com/training/modules/develop-ai-agents-azure-vs-code/) | ☐ | [→](modules/02-agents/01-develop-agents-foundry-vscode/) | [📝 50 Qs](modules/02-agents/01-develop-agents-foundry-vscode/practice-questions.md) |
+| 2.2 | [Integrate custom tools into your agent](https://learn.microsoft.com/training/modules/build-agent-with-custom-tools/) | ☐ | [→](modules/02-agents/02-integrate-custom-tools/) | [📝 50 Qs](modules/02-agents/02-integrate-custom-tools/practice-questions.md) |
 | 2.3 | [Integrate MCP Tools with Azure AI Agents](https://learn.microsoft.com/training/modules/connect-agent-to-mcp-tools/) | ☐ | [→](modules/02-agents/03-integrate-mcp-tools/) |
 | 2.4 | [Build knowledge-enhanced AI agents with Foundry IQ](https://learn.microsoft.com/training/modules/introduction-foundry-iq/) | ☐ | [→](modules/02-agents/04-knowledge-enhanced-agents-foundry-iq/) |
 | 2.5 | [Integrate your agent with Microsoft 365](https://learn.microsoft.com/training/modules/integrate-foundry-agent-with-m365/) | ☐ | [→](modules/02-agents/05-integrate-agent-m365/) |
@@ -107,9 +107,9 @@ The course has **4 learning paths** with **34 modules total**:
 
 | Metric | Status |
 |--------|--------|
-| **Modules completed** | 10 / 34 |
+| **Modules completed** | 0 / 34 |
 | **Exam status** | Not taken |
-| **Current focus** | LP2 Module 2.3 — Integrate MCP Tools with Azure AI Agents |
+| **Current focus** | LP1 Module 1.1 — Plan and prepare to develop AI solutions on Azure |
 
 ---
 
@@ -130,8 +130,8 @@ The course has **4 learning paths** with **34 modules total**:
 [![Course](https://img.shields.io/badge/Course-AI103T00--A-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/training/courses/ai-103t00)
 [![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Portal-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
 [![Microsoft Learn Badge](https://img.shields.io/badge/Microsoft_Learn-Badge-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/en-us/users/himanshukumar-1965/achievements/eghlmzmp)
-[![Status](https://img.shields.io/badge/Status-In_Progress-yellow?style=for-the-badge)](#progress)
+[![Status](https://img.shields.io/badge/Status-Not_Started-lightgrey?style=for-the-badge)](#progress)
 
-*Last updated: 2026-08-04*
+*Last updated: 2026-10-03*
 
 </div>
