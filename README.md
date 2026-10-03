@@ -2,11 +2,9 @@
 
 # AI-103: Microsoft Certified: Azure AI Apps and Agents Developer Associate
 
-[Official certification: ](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/?practice-assessment-type=certification)
+[Official certification](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/?practice-assessment-type=certification)
  
- ## Why I Chose This Certification
 
-I've been using Microsoft Foundry (formerly Azure AI Foundry), Azure AI Search, the Azure Cosmos DB toolkit, and Foundry IQ to build agents. I chose this certification to broaden my understanding of Azure AI services, discover features I haven't explored, and make better architectural decisions when building code-first AI solutions.
 
 [![Exam](https://img.shields.io/badge/Exam-AI103-blue?style=for-the-badge&logo=microsoft&logoColor=white)](https://learn.microsoft.com/credentials/certifications/exams/ai-103)
 [![Course](https://img.shields.io/badge/Course-AI103T00--A-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/training/courses/ai-103t00)
@@ -22,7 +20,13 @@ I've been using Microsoft Foundry (formerly Azure AI Foundry), Azure AI Search, 
 </div>
 
 ---
+ ## Why I Chose This Certification
 
+I've been using Microsoft Foundry (formerly Azure AI Foundry), Azure AI Search, the Azure Cosmos DB toolkit, and Foundry IQ to build agents. I chose this certification to broaden my understanding of Azure AI services, discover features I haven't explored, and make better architectural decisions when building code-first AI solutions.
+
+## My Study Approach
+
+I'll work through the official Microsoft Learn content to solidify my understanding, build small projects where needed, and test my knowledge with the practice questions in this repo. I'll keep the content concise and relevant.
 ## Course Structure
 
 The course has **4 learning paths** with **34 modules total**:
