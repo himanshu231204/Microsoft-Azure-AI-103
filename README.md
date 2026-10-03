@@ -2,6 +2,8 @@
 
 # AI-103T00-A: Develop AI Apps and Agents on Azure
 
+AI-103 exam prep: study notes, practice questions, an exam guide, and a 34-module progress tracker.
+
 [![Exam](https://img.shields.io/badge/Exam-AI103-blue?style=for-the-badge&logo=microsoft&logoColor=white)](https://learn.microsoft.com/credentials/certifications/exams/ai-103)
 [![Course](https://img.shields.io/badge/Course-AI103T00--A-0078D4?style=for-the-badge&logo=microsoftlearn&logoColor=white)](https://learn.microsoft.com/training/courses/ai-103t00)
 [![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Foundry_Portal-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://ai.azure.com)
